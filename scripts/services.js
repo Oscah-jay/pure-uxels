@@ -1,5 +1,10 @@
-// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
+    // Loading Animation
+    const loader = document.querySelector('.loader');
+    
+    setTimeout(function() {
+        loader.classList.add('loaded');
+    }, 2500);
     // Custom Cursor
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');

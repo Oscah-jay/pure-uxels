@@ -1,5 +1,10 @@
-// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
+    // Loading Animation
+    const loader = document.querySelector('.loader');
+    
+    setTimeout(function() {
+        loader.classList.add('loaded');
+    }, 2500);
     // Custom Cursor
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
@@ -477,8 +482,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        
-       
+        // If scrolling up and not at the first slide
+        if (e.deltaY < 0 && currentSlide > 0) {
+            e.preventDefault();
+            
+            if (!isAnimating) {
+                prevSlide();
+            }
+        }
     }
     
     // Show a specific slide
