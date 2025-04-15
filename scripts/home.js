@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-links1');
     
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-links1 a').forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
@@ -352,4 +352,195 @@ document.addEventListener('DOMContentLoaded', function() {
             closeOverlay.click();
         }
     });
+});
+
+// Services Section with Controlled Scrolling
+document.addEventListener('DOMContentLoaded', function() {
+    const servicesSection = document.getElementById('services-section');
+    const serviceSlides = document.querySelectorAll('.service-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    let currentSlide = 0;
+    let isAnimating = false;
+    let autoplayInterval;
+    let canScrollPast = false;
+    let sectionInView = false;
+    
+    // Initialize the section
+    function initServicesSection() {
+        // Set up the first slide
+        showSlide(0);
+        
+        // Start autoplay
+        startAutoplay();
+        
+        // Add event listeners for indicators
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                if (isAnimating) return;
+                
+                const index = parseInt(this.getAttribute('data-index'));
+                showSlide(index);
+                resetAutoplay();
+            });
+        });
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+        
+        // Add wheel event listener to control scrolling
+        window.addEventListener('wheel', handleWheel, { passive: false });
+        
+        // Add touch events for mobile
+        let touchStartY = 0;
+        
+        window.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        window.addEventListener('touchmove', function(e) {
+            if (!sectionInView) return;
+            
+            const touchY = e.touches[0].clientY;
+            const diff = touchStartY - touchY;
+            
+            // If scrolling down and not at the last slide or can't scroll past
+            if (diff > 0 && (currentSlide < serviceSlides.length - 1 || !canScrollPast)) {
+                e.preventDefault();
+                
+                if (diff > 50 && !isAnimating) {
+                    nextSlide();
+                    touchStartY = touchY;
+                }
+            }
+            
+            // If scrolling up and not at the first slide
+            if (diff < 0 && currentSlide > 0) {
+                e.preventDefault();
+                
+                if (diff < -50 && !isAnimating) {
+                    prevSlide();
+                    touchStartY = touchY;
+                }
+            }
+        }, { passive: false });
+    }
+    
+    // Handle scroll events
+    function handleScroll() {
+        const rect = servicesSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Check if section is in view
+        if (rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.7) {
+            if (!sectionInView) {
+                sectionInView = true;
+                startAutoplay();
+            }
+        } else {
+            sectionInView = false;
+            stopAutoplay();
+        }
+        
+        // Lock scrolling when section is in view and we're not at the last slide
+        if (sectionInView && !canScrollPast) {
+            servicesSection.style.position = 'fixed';
+            servicesSection.style.top = '0';
+            servicesSection.style.left = '0';
+            servicesSection.style.zIndex = '10';
+            
+            // Add a spacer to prevent content jump
+            if (!document.getElementById('services-spacer')) {
+                const spacer = document.createElement('div');
+                spacer.id = 'services-spacer';
+                spacer.style.height = '100vh';
+                servicesSection.parentNode.insertBefore(spacer, servicesSection);
+            }
+        } else {
+            servicesSection.style.position = 'relative';
+            servicesSection.style.top = 'auto';
+            servicesSection.style.left = 'auto';
+            servicesSection.style.zIndex = 'auto';
+        }
+    }
+    
+    // Handle wheel events
+    function handleWheel(e) {
+        if (!sectionInView) return;
+        
+        // If scrolling down and not at the last slide or can't scroll past
+        if (e.deltaY > 0 && (currentSlide < serviceSlides.length - 1 || !canScrollPast)) {
+            e.preventDefault();
+            
+            if (!isAnimating) {
+                nextSlide();
+            }
+        }
+        
+        
+       
+    }
+    
+    // Show a specific slide
+    function showSlide(index) {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        // Hide current slide
+        serviceSlides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        
+        // Show new slide
+        currentSlide = index;
+        serviceSlides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+        
+        // Allow scrolling past if we're at the last slide
+        canScrollPast = currentSlide === serviceSlides.length - 1;
+        
+        // Reset animation flag after transition
+        setTimeout(() => {
+            isAnimating = false;
+        }, 800);
+    }
+    
+    // Go to next slide
+    function nextSlide() {
+        if (currentSlide < serviceSlides.length - 1) {
+            showSlide(currentSlide + 1);
+        }
+    }
+    
+    // Go to previous slide
+    function prevSlide() {
+        if (currentSlide > 0) {
+            showSlide(currentSlide - 1);
+        }
+    }
+    
+    // Start autoplay
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(() => {
+            if (currentSlide < serviceSlides.length - 1) {
+                nextSlide();
+            } else {
+                showSlide(0);
+            }
+        }, 5000);
+    }
+    
+    // Stop autoplay
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+    
+    // Reset autoplay
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+    
+    // Initialize the section
+    initServicesSection();
 });
