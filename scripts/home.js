@@ -304,3 +304,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Let's Talk Button and Overlay Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const letsTalkBtn = document.getElementById('lets-talk-btn');
+    const overlayMenu = document.getElementById('overlay-menu');
+    const closeOverlay = document.getElementById('close-overlay');
+    
+    // Open overlay when Let's Talk button is clicked
+    letsTalkBtn.addEventListener('click', function() {
+        overlayMenu.classList.add('active');
+        document.body.classList.add('overlay-active');
+        
+        // Add animation classes with delay
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach((link, index) => {
+            setTimeout(() => {
+                link.style.opacity = '1';
+                link.style.transform = 'translateY(0)';
+            }, 100 * (index + 1));
+        });
+    });
+    
+    // Close overlay when close button is clicked
+    closeOverlay.addEventListener('click', function() {
+        overlayMenu.classList.remove('active');
+        document.body.classList.remove('overlay-active');
+        
+        // Reset animations
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.style.opacity = '0';
+            link.style.transform = 'translateY(20px)';
+        });
+    });
+    
+    // Close overlay when clicking outside of content (optional)
+    overlayMenu.addEventListener('click', function(e) {
+        if (e.target === overlayMenu) {
+            closeOverlay.click();
+        }
+    });
+    
+    // Close overlay when ESC key is pressed
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlayMenu.classList.contains('active')) {
+            closeOverlay.click();
+        }
+    });
+});

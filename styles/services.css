@@ -1133,7 +1133,7 @@ footer {
 /* Let's Talk Button and Overlay Styles */
 .lets-talk-btn {
     position: fixed;
-    top: 24px;
+    top: 100px;
     right: 24px;
     z-index: 1000;
     padding: 8px 16px;
