@@ -14,7 +14,7 @@
     
     <!-- Loading Animation -->
     <div class="loader">
-        <span class="loader-text">Pure UXels</span>
+        <span class="loader-text">About Us</span>
         <div class="loader-progress">
             <div class="loader-bar"></div>
         </div>
@@ -35,9 +35,9 @@
                 <ul class="nav-links1">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./services.html">Services</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="#" class="active">About</a></li>
                     <li><a href="./portfolio.html">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
                 </ul>
                 <button class="theme-toggle">
                     <i class="fas fa-moon"></i>
@@ -119,58 +119,221 @@
         </div>
     </section>
 
-    <!-- Journey Section -->
-    <section class="journey-section">
-        <div class="container">
-            <div class="journey-header">
-                <div class="subtitle reveal-text">OUR JOURNEY</div>
-                <h2 class="reveal-text">How we've grown over the years</h2>
+   <!-- Tools & Tech Stack Section -->
+<section class="tools-section">
+    <div class="container">
+        <div class="section-header reveal-text">
+            <h2>Our <span class="highlight">Tools</span> & Tech Stack</h2>
+            <p>We leverage cutting-edge tools and technologies to bring your vision to life.</p>
+        </div>
+        
+        <div class="tools-categories">
+            <!-- Category Tabs -->
+            <div class="category-tabs reveal">
+                <button class="category-tab active" data-category="design">Design</button>
+                <button class="category-tab" data-category="motion">3D & Motion</button>
+                <button class="category-tab" data-category="collaboration">Collaboration</button>
+                <div class="tab-indicator"></div>
             </div>
-            <div class="timeline">
-                <div class="timeline-line"></div>
-                
-                <div class="timeline-item left reveal">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2010</div>
-                        <h3>The Beginning</h3>
-                        <p>Started as a small design studio with just 3 team members and big dreams.</p>
+            
+            <!-- Tools Grid -->
+            <div class="tools-container">
+                <!-- Design Tools -->
+                <div class="tools-grid active" data-category="design">
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/figma.png" alt="Figma">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Figma</h3>
+                        <p>UI/UX Design & Prototyping</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/photoshop.png" alt="Adobe Photoshop">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Photoshop</h3>
+                        <p>Image Editing & Manipulation</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/Illustrator.jpg" alt="Adobe Illustrator">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Illustrator</h3>
+                        <p>Vector Graphics & Illustrations</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/xd.jpg" alt="Adobe XD">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Adobe XD</h3>
+                        <p>UI/UX Design & Prototyping</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/Sketch.png" alt="Sketch">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Sketch</h3>
+                        <p>UI Design for macOS</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/indesign.png" alt="Adobe InDesign">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>InDesign</h3>
+                        <p>Print & Digital Publishing</p>
                     </div>
                 </div>
                 
-                <div class="timeline-item right reveal">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2013</div>
-                        <h3>First Major Client</h3>
-                        <p>Landed our first Fortune 500 client, opening doors to new opportunities.</p>
+                <!-- 3D & Motion Tools -->
+                <div class="tools-grid" data-category="motion">
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/aftereffects.png" alt="After Effects">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>After Effects</h3>
+                        <p>Motion Graphics & VFX</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/premierepro.png" alt="Premiere Pro">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Premiere Pro</h3>
+                        <p>Video Editing</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/blender.png" alt="Blender">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Blender</h3>
+                        <p>3D Modeling & Animation</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/canva.svg" alt="Canva">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Canva</h3>
+                        <p>Logos and Mockups</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/unity.png" alt="Unity">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Unity</h3>
+                        <p>Interactive 3D & AR/VR</p>
                     </div>
                 </div>
                 
-                <div class="timeline-item left reveal">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2016</div>
-                        <h3>Office Expansion</h3>
-                        <p>Moved to a larger office space and expanded our team to 15 talented creators.</p>
+                <!-- Collaboration Tools -->
+                <div class="tools-grid" data-category="collaboration">
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/slack.webp" alt="Slack">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Slack</h3>
+                        <p>Team Communication</p>
                     </div>
-                </div>
-                
-                <div class="timeline-item right reveal">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2019</div>
-                        <h3>International Recognition</h3>
-                        <p>Won several international design awards for our pioneering work.</p>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/notion.png" alt="Notion">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Notion</h3>
+                        <p>Project Management</p>
                     </div>
-                </div>
-                
-                <div class="timeline-item left reveal">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023</div>
-                        <h3>Today</h3>
-                        <p>A thriving creative agency with global clients and a team of passionate experts.</p>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/github.png" alt="GitHub">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Version Control</p>
+                    </div>
+                    
+                    <div class="tool-card reveal">
+                        <div class="tool-icon">
+                            <img src="./Assets/tools/miro.svg" alt="Miro">
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Miro</h3>
+                        <p>Visual Collaboration</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Expertise Meter -->
+        <div class="expertise-container reveal">
+            <h3 class="expertise-title">Our Expertise Level</h3>
+            <div class="expertise-meters">
+                <div class="expertise-meter">
+                    <div class="meter-label">UI/UX Design</div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" data-percentage="95">
+                            <span class="meter-percentage">95%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="expertise-meter">
+                    <div class="meter-label">Motion Graphics</div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" data-percentage="90">
+                            <span class="meter-percentage">90%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="expertise-meter">
+                    <div class="meter-label">3D Visualization</div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" data-percentage="85">
+                            <span class="meter-percentage">85%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="expertise-meter">
+                    <div class="meter-label">Video Editing</div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" data-percentage="80">
+                            <span class="meter-percentage">80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Elements -->
+    <div class="tools-bg">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+    </div>
+</section>
 
     <!-- Team Section -->
     <section class="team-section">
@@ -472,48 +635,6 @@
         </div>
     </section>
 
-    <!-- Office Section -->
-    <section class="office-section">
-        <div class="container">
-            <div class="office-header">
-                <div class="subtitle reveal-text">OUR WORKPLACE</div>
-                <h2 class="reveal-text">Where the magic happens</h2>
-            </div>
-            <div class="office-gallery reveal">
-                <div class="gallery-item large">
-                    <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Office Space">
-                    <div class="gallery-overlay">
-                        <span>Main Office</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Team Meeting">
-                    <div class="gallery-overlay">
-                        <span>Collaboration</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Creative Space">
-                    <div class="gallery-overlay">
-                        <span>Creative Zone</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Brainstorming">
-                    <div class="gallery-overlay">
-                        <span>Ideation Room</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1520881363902-a0ff4e722963?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Coffee Area">
-                    <div class="gallery-overlay">
-                        <span>Break Area</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -536,11 +657,11 @@
                     <div class="footer-column">
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="#work">Work</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./services.html">Services</a></li>
+                            <li><a href="./About.html">About</a></li>
+                            <li><a href="./portfolio.html">Work</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -595,19 +716,19 @@
         
         <div class="overlay-content">
             <div class="nav-links">
-                <a href="/work" class="nav-link">Work</a>
-                <a href="/services" class="nav-link">Services</a>
-                <a href="/about" class="nav-link">About</a>
+                <a href="./portfolio.html" class="nav-link">Work</a>
+                <a href="./services.html" class="nav-link">Services</a>
+                <a href="./About.html" class="nav-link">About</a>
                 <a href="/insights" class="nav-link">Insights</a>
-                <a href="/contact" class="nav-link">Contact</a>
+                <a href="./contact.html" class="nav-link">Contact</a>
             </div>
             
             <div class="contact-info">
-                <a href="mailto:pure.uxels@gmail.com" class="contact-link">info@pure-uxels.com</a>
+                <a href="mailto:pure.uxels@gmail.com" class="contact-link">pure.uxels@gmail.com</a>
                 <a href="tel:+254798785974" class="contact-link phone">+(254) 798785974</a>
                 <div class="address">
-                    <p>kenya</p>
-                    <p>Kahawa, Nairobi</p>
+                    <p>Nairobi</p>
+                    <p>Kenya</p>
                 </div>
             </div>
         </div>

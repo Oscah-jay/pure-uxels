@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure UXels - Contact Us</title>
+    <link rel="stylesheet" href="./styles/contact.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-title">CONTACT</div>
+            <div class="loader-subtitle">CONNECTING WITH US</div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+            <div class="loader-percentage">0%</div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg class="logo-icon" width="50" height="50" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="#ff4b33" stroke-width="3" fill="none" />
+                        <path d="M35,65 L65,35 M35,35 L65,65" stroke="#ff4b33" stroke-width="3" />
+                    </svg>
+                    <span>Pure UXels</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links1">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./About.html">About</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="#" class="active">Contact</a></li>
+                </ul>
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="subtitle reveal-text">GET IN TOUCH</div>
+                <h1 class="reveal-text">Let's <span class="highlight">Connect</span></h1>
+                <p class="reveal-text">We'd love to hear from you. Reach out and let's create something amazing together.</p>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-card reveal">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Visit Us</h3>
+                            <p>Nairobi<br>Kenya</p>
+                        </div>
+                        <div class="card-decoration"></div>
+                    </div>
+                    
+                    <div class="info-card reveal">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p>pure.uxels@gmail.com</p>
+                        </div>
+                        <div class="card-decoration"></div>
+                    </div>
+                    
+                    <div class="info-card reveal">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Call Us</h3>
+                            <p>+254 (798) 785-974<br>+254 (759) 855-368</p>
+                        </div>
+                        <div class="card-decoration"></div>
+                    </div>
+                    
+                    <div class="social-links reveal">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                                <span class="icon-bg"></span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                                <span class="icon-bg"></span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                                <span class="icon-bg"></span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span class="icon-bg"></span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-dribbble"></i>
+                                <span class="icon-bg"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container reveal">
+                    <div class="form-header">
+                        <h2>Send a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                                <span class="input-focus"></span>
+                                <span class="error-message">Please enter your name</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Your Email</label>
+                                <span class="input-focus"></span>
+                                <span class="error-message">Please enter a valid email</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="project">Project Request</option>
+                                    <option value="quote">Request a Quote</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label for="subject">Subject</label>
+                                <span class="input-focus"></span>
+                                <span class="error-message">Please select a subject</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Your Message</label>
+                                <span class="input-focus"></span>
+                                <span class="error-message">Please enter your message</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">I agree to the processing of my personal data according to the <a href="#">Privacy Policy</a></label>
+                                <span class="error-message">You must agree to the privacy policy</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                            <span class="btn-loading"><i class="fas fa-spinner"></i></span>
+                            <span class="btn-success"><i class="fas fa-check"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Hours Section -->
+    <section class="hours-section">
+        <div class="container">
+            <div class="hours-container reveal">
+                <div class="hours-header">
+                    <h2>Office Hours</h2>
+                    <p>We're available to assist you during the following hours:</p>
+                </div>
+                <div class="hours-grid">
+                    <div class="hours-card">
+                        <div class="day">Monday - Friday</div>
+                        <div class="time">9:00 AM - 6:00 PM</div>
+                        <div class="status open">Open Now</div>
+                    </div>
+                    <div class="hours-card">
+                        <div class="day">Saturday</div>
+                        <div class="time">10:00 AM - 4:00 PM</div>
+                        <div class="status closed">Closed</div>
+                    </div>
+                    <div class="hours-card">
+                        <div class="day">Sunday</div>
+                        <div class="time">Closed</div>
+                        <div class="status closed">Closed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header reveal-text">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and process.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>What services do you offer?</h3>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a comprehensive range of creative services including branding, web 
+                            design and development, UI/UX design, graphic design, motion graphics, and 
+                            digital marketing solutions. Our team specializes in creating cohesive visual 
+                            identities and digital experiences that help businesses stand out.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>How much do your services cost?</h3>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our pricing varies based on project scope, complexity, and timeline. 
+                            We provide customized quotes after understanding your specific needs 
+                            and objectives. Contact us for a free consultation and we'll be happy to 
+                            provide a detailed estimate for your project.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>What is your typical process for new projects?</h3>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our process typically includes: 1) Initial consultation to understand your 
+                            goals and requirements, 2) Research and strategy development, 3) Concept 
+                            creation and design, 4) Client feedback and revisions, 5) Final production 
+                            and implementation, and 6) Launch and follow-up support. We maintain clear 
+                            communication throughout to ensure your vision is realized.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>How long does a typical project take?</h3>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Project timelines vary depending on scope and complexity. A basic website 
+                            might take 4-6 weeks, while a comprehensive branding project could take
+                             8-12 weeks. During our initial consultation, we'll provide a realistic 
+                             timeline based on your specific project requirements and goals.
+                            </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>Do you offer ongoing support after project completion?</h3>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer various support and maintenance packages to ensure your 
+                            digital assets continue to perform optimally. These can include website 
+                            updates, content management, performance monitoring, and technical support. 
+                            We can customize a support plan based on your specific needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="reveal-text">Ready to start your project?</h2>
+                <p class="reveal-text">Let's create something amazing together.</p>
+                <a href="#" class="btn primary reveal">Schedule a Call</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Pure UXels</h2>
+                    <p>Creative Digital Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./services.html">Services</a></li>
+                            <li><a href="./About.html">About</a></li>
+                            <li><a href="./portfolio.html">Portfolio</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">UI/UX Design</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Video Production</a></li>
+                            <li><a href="#">Digital Marketing</a></li>
+                            <li><a href="#">Brand Identity</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Subscribe</h3>
+                        <p>Subscribe to our newsletter to receive updates</p>
+                        <form class="subscribe-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pure UXels. All Rights Reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Let's Talk Button -->
+    <button id="lets-talk-btn" class="lets-talk-btn">TALK TO US</button>
+
+    <!-- Overlay Menu -->
+    <div id="overlay-menu" class="overlay-menu">
+        <div class="overlay-header">
+            <span class="menu-label">MENU</span>
+            <div class="header-right">
+                <span class="lets-talk-label">LET'S TALK</span>
+                <button id="close-overlay" class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="overlay-content">
+            <div class="nav-links">
+                <a href="./portfolio.html" class="nav-link">Work</a>
+                <a href="./services.html" class="nav-link">Services</a>
+                <a href="./About.html" class="nav-link">About</a>
+                <a href="/insights" class="nav-link">Insights</a>
+                <a href="./contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="contact-info">
+                <a href="mailto:pure.uxels@gmail.com" class="contact-link">pure.uxels@gmail.com</a>
+                <a href="tel:+254798785974" class="contact-link phone">(+254) 798785974 </a>
+                <div class="address">
+                    <p>Nairobi</p>
+                    <p>Kenya</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We'll get back to you shortly.</p>
+            <button class="close-success">Close</button>
+        </div>
+    </div>
+
+    <script src="./scripts/contact.js"></script>
+</body>
+</html>

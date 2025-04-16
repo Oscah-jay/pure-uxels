@@ -298,3 +298,130 @@ document.addEventListener('DOMContentLoaded', function() {
         handleOverlayScroll();
     });
 });
+
+// Tools & Tech Stack Section JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Category Tabs Functionality
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const toolsGrids = document.querySelectorAll('.tools-grid');
+    const tabIndicator = document.querySelector('.tab-indicator');
+    
+    // Initialize tab indicator position and width
+    function setTabIndicator(activeTab) {
+        if (!tabIndicator) return;
+        
+        const tabWidth = activeTab.offsetWidth;
+        const tabLeft = activeTab.offsetLeft;
+        
+        tabIndicator.style.width = tabWidth + 'px';
+        tabIndicator.style.transform = `translateX(${tabLeft}px)`;
+    }
+    
+    // Set initial tab indicator
+    if (categoryTabs.length > 0) {
+        setTabIndicator(categoryTabs[0]);
+    }
+    
+    // Tab click event
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Update active tab
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update tab indicator
+            setTabIndicator(this);
+            
+            // Show corresponding tools grid
+            const category = this.getAttribute('data-category');
+            
+            toolsGrids.forEach(grid => {
+                grid.classList.remove('active');
+                
+                if (grid.getAttribute('data-category') === category) {
+                    grid.classList.add('active');
+                    
+                    // Animate tool cards
+                    animateToolCards(grid);
+                }
+            });
+        });
+    });
+    
+    // Animate tool cards with staggered delay
+    function animateToolCards(grid) {
+        const toolCards = grid.querySelectorAll('.tool-card');
+        
+        toolCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+    }
+    
+    // Expertise Meter Animation
+    function animateExpertiseMeters() {
+        const meterFills = document.querySelectorAll('.meter-fill');
+        
+        meterFills.forEach(fill => {
+            const percentage = fill.getAttribute('data-percentage');
+            fill.style.width = percentage + '%';
+        });
+    }
+    
+    // Scroll Reveal Animation
+    function revealElements() {
+        const reveals = document.querySelectorAll('.reveal');
+        const revealTexts = document.querySelectorAll('.reveal-text');
+        
+        reveals.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('active');
+                
+                // If this is the expertise container, animate meters
+                if (element.classList.contains('expertise-container')) {
+                    animateExpertiseMeters();
+                }
+            }
+        });
+        
+        revealTexts.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', revealElements);
+    
+    // Initial reveal check
+    revealElements();
+    
+    // Animate the initial active tools grid
+    const initialGrid = document.querySelector('.tools-grid.active');
+    if (initialGrid) {
+        setTimeout(() => {
+            animateToolCards(initialGrid);
+        }, 500);
+    }
+    
+    // Window resize event for tab indicator
+    window.addEventListener('resize', function() {
+        const activeTab = document.querySelector('.category-tab.active');
+        if (activeTab) {
+            setTabIndicator(activeTab);
+        }
+    });
+});
