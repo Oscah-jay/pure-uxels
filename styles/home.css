@@ -2177,8 +2177,9 @@ blockquote {
         margin: 0 auto;
     }
     
-    .image-container {
+    .image-container1 {
         height: 350px;
+        width: 400px;
     }
     
     .image-decoration {
@@ -2213,7 +2214,7 @@ blockquote {
         width: 200px;
     }
     
-    .image-container {
+    .image-container1 {
         height: 280px;
     }
     
