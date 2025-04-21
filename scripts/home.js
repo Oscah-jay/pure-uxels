@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Services Section with Controlled Scrolling
+// Services Section with Animated Slides (Without Scroll Locking)
 document.addEventListener('DOMContentLoaded', function() {
     const servicesSection = document.getElementById('services-section');
     const serviceSlides = document.querySelectorAll('.service-slide');
@@ -368,16 +368,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     let isAnimating = false;
     let autoplayInterval;
-    let canScrollPast = false;
     let sectionInView = false;
+    let lastScrollPosition = 0;
     
     // Initialize the section
     function initServicesSection() {
         // Set up the first slide
         showSlide(0);
-        
-        // Start autoplay
-        startAutoplay();
         
         // Add event listeners for indicators
         indicators.forEach(indicator => {
@@ -393,8 +390,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add scroll event listener
         window.addEventListener('scroll', handleScroll);
         
-        // Add wheel event listener to control scrolling
-        window.addEventListener('wheel', handleWheel, { passive: false });
+        // Add wheel event listener to detect scroll direction
+        window.addEventListener('wheel', handleWheel, { passive: true });
         
         // Add touch events for mobile
         let touchStartY = 0;
@@ -409,26 +406,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const touchY = e.touches[0].clientY;
             const diff = touchStartY - touchY;
             
-            // If scrolling down and not at the last slide or can't scroll past
-            if (diff > 0 && (currentSlide < serviceSlides.length - 1 || !canScrollPast)) {
-                e.preventDefault();
-                
-                if (diff > 50 && !isAnimating) {
+            // Detect significant touch movement to change slides
+            if (Math.abs(diff) > 50 && !isAnimating) {
+                if (diff > 0 && currentSlide < serviceSlides.length - 1) {
                     nextSlide();
-                    touchStartY = touchY;
-                }
-            }
-            
-            // If scrolling up and not at the first slide
-            if (diff < 0 && currentSlide > 0) {
-                e.preventDefault();
-                
-                if (diff < -50 && !isAnimating) {
+                } else if (diff < 0 && currentSlide > 0) {
                     prevSlide();
-                    touchStartY = touchY;
                 }
+                touchStartY = touchY;
             }
-        }, { passive: false });
+        }, { passive: true });
     }
     
     // Handle scroll events
@@ -437,58 +424,48 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowHeight = window.innerHeight;
         
         // Check if section is in view
-        if (rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.7) {
+        if (rect.top <= windowHeight * 0.7 && rect.bottom >= windowHeight * 0.3) {
             if (!sectionInView) {
                 sectionInView = true;
                 startAutoplay();
+            }
+            
+            // Determine scroll direction
+            const currentScrollPosition = window.scrollY;
+            const scrollingDown = currentScrollPosition > lastScrollPosition;
+            lastScrollPosition = currentScrollPosition;
+            
+            // Calculate how far through the section we've scrolled
+            const sectionHeight = rect.height;
+            const scrollProgress = (windowHeight * 0.5 - rect.top) / sectionHeight;
+            
+            // Use scroll position to determine which slide to show
+            if (!isAnimating && scrollProgress >= 0 && scrollProgress <= 1) {
+                const slideIndex = Math.min(
+                    Math.floor(scrollProgress * serviceSlides.length),
+                    serviceSlides.length - 1
+                );
+                
+                if (slideIndex !== currentSlide) {
+                    showSlide(slideIndex);
+                }
             }
         } else {
             sectionInView = false;
             stopAutoplay();
         }
-        
-        // Lock scrolling when section is in view and we're not at the last slide
-        if (sectionInView && !canScrollPast) {
-            servicesSection.style.position = 'fixed';
-            servicesSection.style.top = '0';
-            servicesSection.style.left = '0';
-            servicesSection.style.zIndex = '10';
-            
-            // Add a spacer to prevent content jump
-            if (!document.getElementById('services-spacer')) {
-                const spacer = document.createElement('div');
-                spacer.id = 'services-spacer';
-                spacer.style.height = '100vh';
-                servicesSection.parentNode.insertBefore(spacer, servicesSection);
-            }
-        } else {
-            servicesSection.style.position = 'relative';
-            servicesSection.style.top = 'auto';
-            servicesSection.style.left = 'auto';
-            servicesSection.style.zIndex = 'auto';
-        }
     }
     
-    // Handle wheel events
+    // Handle wheel events for additional slide control
     function handleWheel(e) {
-        if (!sectionInView) return;
+        if (!sectionInView || isAnimating) return;
         
-        // If scrolling down and not at the last slide or can't scroll past
-        if (e.deltaY > 0 && (currentSlide < serviceSlides.length - 1 || !canScrollPast)) {
-            e.preventDefault();
-            
-            if (!isAnimating) {
-                nextSlide();
-            }
-        }
-        
-        // If scrolling up and not at the first slide
-        if (e.deltaY < 0 && currentSlide > 0) {
-            e.preventDefault();
-            
-            if (!isAnimating) {
-                prevSlide();
-            }
+        // Use wheel delta to potentially change slides when in view
+        // but don't prevent default scrolling
+        if (e.deltaY > 50 && currentSlide < serviceSlides.length - 1) {
+            nextSlide();
+        } else if (e.deltaY < -50 && currentSlide > 0) {
+            prevSlide();
         }
     }
     
@@ -505,9 +482,6 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSlide = index;
         serviceSlides[currentSlide].classList.add('active');
         indicators[currentSlide].classList.add('active');
-        
-        // Allow scrolling past if we're at the last slide
-        canScrollPast = currentSlide === serviceSlides.length - 1;
         
         // Reset animation flag after transition
         setTimeout(() => {
@@ -554,6 +528,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize the section
     initServicesSection();
+    
+    // Check initial scroll position
+    handleScroll();
 });
 
 
