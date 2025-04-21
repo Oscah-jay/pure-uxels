@@ -731,3 +731,52 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSlider();
     revealElements();
 });
+
+// Founder Quote Section JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Scroll Reveal Animation
+    function revealElements() {
+        const reveals = document.querySelectorAll('.founder-quote-section .reveal');
+        const revealTexts = document.querySelectorAll('.founder-quote-section .reveal-text');
+        
+        reveals.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+        
+        revealTexts.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', revealElements);
+    
+    // Initial reveal check
+    setTimeout(revealElements, 300);
+    
+    // Optional: Parallax effect on founder image
+    const founderImage = document.querySelector('.founder-image');
+    
+    window.addEventListener('scroll', function() {
+        if (founderImage) {
+            const scrollPosition = window.scrollY;
+            const parallaxOffset = scrollPosition * 0.05;
+            
+            if (window.innerWidth > 992) { // Only apply on larger screens
+                founderImage.style.transform = `translateY(${parallaxOffset}px)`;
+            } else {
+                founderImage.style.transform = 'none';
+            }
+        }
+    });
+});
