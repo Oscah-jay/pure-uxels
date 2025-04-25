@@ -445,6 +445,30 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             text: "The future belongs to those who believe in the beauty of their dreams.",
             author: "— Eleanor Roosevelt"
+        },
+        {
+            text: "Design is intelligence made visible.",
+            author: "— Alina Wheeler"
+        },
+        {
+            text: "People ignore design that ignores people.",
+            author:" — Frank Chimero"
+        },
+        {
+            text:"Inspiration exists, but it has to find you working.",
+            author: "— Pablo Picasso"
+        },
+        {
+            text: "Your brand is a story unfolding across all customer touchpoints.",
+            author: " — Jonah Sachs"
+        },
+        {
+            text: "Design adds value faster than it adds cost.",
+            author: " — Joel Spolsky"
+        },
+        {
+            text: "Make it simple, but significant.",
+            author: " — Don Draper "
         }
     ];
     
@@ -509,11 +533,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Auto-rotate quotes every 8 seconds
+    // Auto-rotate quotes every 4 seconds
     setInterval(function() {
         currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
         updateQuote(currentQuoteIndex);
-    }, 8000);
+    }, 4000);
     
     // Core Values Hover Animation
     const valueItems = document.querySelectorAll('.value-item');
