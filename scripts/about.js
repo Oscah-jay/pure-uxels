@@ -425,3 +425,169 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Mission & Vision Section 
+document.addEventListener('DOMContentLoaded', function() {
+    // Interactive Quotes
+    const quotes = [
+        {
+            text: "Art is not what you see, but what you make others see.",
+            author: "— Edgar Degas"
+        },
+        {
+            text: "Creativity takes courage.",
+            author: "— Henri Matisse"
+        },
+        {
+            text: "Design is not just what it looks like and feels like. Design is how it works.",
+            author: "— Steve Jobs"
+        },
+        {
+            text: "The future belongs to those who believe in the beauty of their dreams.",
+            author: "— Eleanor Roosevelt"
+        }
+    ];
+    
+    const quoteText = document.getElementById('changing-quote');
+    const quoteAuthor = document.getElementById('quote-author');
+    const quoteIndicators = document.querySelectorAll('.quote-indicator');
+    const prevQuoteBtn = document.querySelector('.prev-quote');
+    const nextQuoteBtn = document.querySelector('.next-quote');
+    
+    let currentQuoteIndex = 0;
+    
+    // Function to update quote
+    function updateQuote(index) {
+        // Add exit animation
+        quoteText.style.opacity = 0;
+        quoteAuthor.style.opacity = 0;
+        quoteText.style.transform = 'translateY(20px)';
+        quoteAuthor.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            // Update content
+            quoteText.textContent = quotes[index].text;
+            quoteAuthor.textContent = quotes[index].author;
+            
+            // Update indicators
+            quoteIndicators.forEach((indicator, i) => {
+                if (i === index) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+            
+            // Add entrance animation
+            quoteText.style.opacity = 1;
+            quoteAuthor.style.opacity = 1;
+            quoteText.style.transform = 'translateY(0)';
+            quoteAuthor.style.transform = 'translateY(0)';
+        }, 300);
+    }
+    
+    // Event listeners for quote navigation
+    if (prevQuoteBtn) {
+        prevQuoteBtn.addEventListener('click', function() {
+            currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+            updateQuote(currentQuoteIndex);
+        });
+    }
+    
+    if (nextQuoteBtn) {
+        nextQuoteBtn.addEventListener('click', function() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            updateQuote(currentQuoteIndex);
+        });
+    }
+    
+    // Allow clicking on indicators to change quote
+    quoteIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            currentQuoteIndex = index;
+            updateQuote(currentQuoteIndex);
+        });
+    });
+    
+    // Auto-rotate quotes every 8 seconds
+    setInterval(function() {
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        updateQuote(currentQuoteIndex);
+    }, 8000);
+    
+    // Core Values Hover Animation
+    const valueItems = document.querySelectorAll('.value-item');
+    
+    valueItems.forEach(item => {
+        const description = item.querySelector('.value-description');
+        
+        // Set initial height to 0
+        if (description) {
+            description.style.height = '0px';
+        }
+        
+        item.addEventListener('mouseenter', function() {
+            if (description) {
+                // Get the actual height of the content
+                description.style.height = 'auto';
+                const height = description.scrollHeight + 'px';
+                description.style.height = '0px';
+                
+                // Trigger reflow
+                void description.offsetWidth;
+                
+                // Set the height to the actual content height
+                description.style.height = height;
+            }
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            if (description) {
+                description.style.height = '0px';
+            }
+        });
+    });
+    
+    // Parallax Effect for Background Elements
+    const bgElements = document.querySelectorAll('.bg-circle, .bg-shape');
+    
+    window.addEventListener('mousemove', function(e) {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        bgElements.forEach(element => {
+            const offsetX = (mouseX - 0.5) * 30;
+            const offsetY = (mouseY - 0.5) * 30;
+            const depth = parseFloat(element.getAttribute('data-depth') || Math.random() * 0.2 + 0.1);
+            
+            element.style.transform = `translate(${offsetX * depth}px, ${offsetY * depth}px)`;
+        });
+    });
+    
+    // Add scroll reveal animation
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.mission-vision-section [data-aos]');
+        const windowHeight = window.innerHeight;
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('aos-animate');
+            }
+        });
+    }
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', revealOnScroll);
+    
+    // Initial check
+    setTimeout(revealOnScroll, 300);
+    
+    // Initialize styles for quote text and author
+    if (quoteText && quoteAuthor) {
+        quoteText.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        quoteAuthor.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    }
+});
