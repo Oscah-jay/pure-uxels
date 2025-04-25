@@ -462,8 +462,6 @@ nav {
 .contact-section {
     padding: 100px 0;
     background-color: var(--background-alt);
-    display: flex;
-    z-index: 1000;
 }
 
 .contact-wrapper {
@@ -1648,6 +1646,7 @@ footer {
     section {
         padding: 70px 0;
     }
+    
     
     .nav-links1 {
         position: fixed;
