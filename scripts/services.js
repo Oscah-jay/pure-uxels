@@ -266,3 +266,157 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// Industries We Serve Section JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS library if it exists
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true
+        });
+    } else {
+        // Fallback animations if AOS is not available
+        initFallbackAnimations();
+    }
+    
+    // Animate stats counter when in viewport
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let animated = false;
+    
+    function animateStats() {
+        if (animated) return;
+        
+        const statsSection = document.querySelector('.industry-stats');
+        if (!statsSection) return;
+        
+        const statsSectionTop = statsSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (statsSectionTop < windowHeight - 100) {
+            statNumbers.forEach(stat => {
+                const targetNumber = parseInt(stat.getAttribute('data-count'));
+                animateCounter(stat, targetNumber);
+            });
+            animated = true;
+        }
+    }
+    
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = Math.ceil(target / 50); // Adjust speed here
+        const duration = 2000; // 2 seconds
+        const interval = Math.floor(duration / (target / increment));
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = current;
+            }
+        }, interval);
+    }
+    
+    // 3D Card Tilt Effect
+    const industryCards = document.querySelectorAll('.industry-card');
+    
+    industryCards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            // Only apply if not on mobile
+            if (window.innerWidth > 768) {
+                const cardRect = card.getBoundingClientRect();
+                const cardX = e.clientX - cardRect.left;
+                const cardY = e.clientY - cardRect.top;
+                
+                const centerX = cardRect.width / 2;
+                const centerY = cardRect.height / 2;
+                
+                const rotateX = (cardY - centerY) / 10;
+                const rotateY = (centerX - cardX) / 10;
+                
+                // Don't apply tilt if card is flipped
+                if (!card.classList.contains('flipped')) {
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                }
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            // Reset transform when mouse leaves
+            if (!card.classList.contains('flipped')) {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            }
+        });
+        
+        // Handle click to flip
+        card.addEventListener('click', function() {
+            card.classList.toggle('flipped');
+            if (card.classList.contains('flipped')) {
+                card.style.transform = 'rotateY(180deg)';
+            } else {
+                card.style.transform = 'rotateY(0deg)';
+            }
+        });
+    });
+    
+    // Parallax Effect for Background Elements
+    const bgElements = document.querySelectorAll('.bg-circle, .bg-shape');
+    
+    window.addEventListener('mousemove', function(e) {
+        // Only apply if not on mobile
+        if (window.innerWidth > 768) {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            bgElements.forEach(element => {
+                const offsetX = (mouseX - 0.5) * 30;
+                const offsetY = (mouseY - 0.5) * 30;
+                const depth = parseFloat(element.getAttribute('data-depth') || Math.random() * 0.2 + 0.1);
+                
+                element.style.transform = `translate(${offsetX * depth}px, ${offsetY * depth}px)`;
+            });
+        }
+    });
+    
+    // Fallback animations if AOS is not available
+    function initFallbackAnimations() {
+        const animateElements = document.querySelectorAll('[data-aos]');
+        
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
+            );
+        }
+        
+        // Function to animate elements in viewport
+        function animateOnScroll() {
+            animateElements.forEach(element => {
+                if (isInViewport(element) && !element.classList.contains('aos-animate')) {
+                    element.classList.add('aos-animate');
+                }
+            });
+        }
+        
+        // Initial check
+        setTimeout(animateOnScroll, 100);
+        
+        // Listen for scroll
+        window.addEventListener('scroll', animateOnScroll);
+    }
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', function() {
+        animateStats();
+    });
+    
+    // Initial check
+    setTimeout(function() {
+        animateStats();
+    }, 500);
+});
