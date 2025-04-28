@@ -208,12 +208,12 @@ document.addEventListener('DOMContentLoaded', function() {
         'project1': {
             title: 'Project 1',
             category: 'Web Design',
-            client: 'Client A',
-            date: '2023-01-01',
-            description: 'Description of Project 1.',
-            challenge: 'Challenge of Project 1.',
-            solution: 'Solution for Project 1.',
-            images: ['image1.jpg', 'image2.jpg']
+            client: 'Newlife Fountain Ministries',
+            date: '2024-10-06',
+            description: 'Web Design for the ministry Website.',
+            challenge: 'Balancing modern design trends with the traditional values and expectations of the ministrys audience.',
+            solution: 'Blend modern design principles with familiar elements, and involve ministry leaders early through moodboards and previews to ensure alignment and smooth approvals.',
+            images: ['./Assets/previews/church1.png']
         },
         'project2': {
             title: 'Project 2',
@@ -234,7 +234,97 @@ document.addEventListener('DOMContentLoaded', function() {
             challenge: 'Challenge of Project 3.',
             solution: 'Solution for Project 3.',
             images: ['image5.jpg', 'image6.jpg']
-        }
+        },
+        'project4': {
+            title: 'Project 4',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project5': {
+            title: 'Project 5',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project6': {
+            title: 'Project 6',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project7': {
+            title: 'Project 7',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project8': {
+            title: 'Project 8',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project9': {
+            title: 'Project 9',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project10': {
+            title: 'Project 10',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project11': {
+            title: 'Project 11',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
+        'project12': {
+            title: 'Project 12',
+            category: 'Web Development',
+            client: 'Client B',
+            date: '2023-02-01',
+            description: 'Description of Project 2.',
+            challenge: 'Challenge of Project 2.',
+            solution: 'Solution for Project 2.',
+            images: ['image3.jpg', 'image4.jpg']
+        },
     };
     
     let currentProjectIndex = 0;
