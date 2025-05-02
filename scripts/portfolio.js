@@ -206,124 +206,117 @@ document.addEventListener('DOMContentLoaded', function() {
     // Define projectsData here or import it
     const projectsData = {
         'project1': {
-            title: 'Project 1',
+            title: 'Web Design',
             category: 'Web Design',
             client: 'Newlife Fountain Ministries',
             date: '2024-10-06',
             description: 'Web Design for the ministry Website.',
             challenge: 'Balancing modern design trends with the traditional values and expectations of the ministrys audience.',
             solution: 'Blend modern design principles with familiar elements, and involve ministry leaders early through moodboards and previews to ensure alignment and smooth approvals.',
-            images: ['./Assets/previews/church1.png']
+            
         },
         'project2': {
-            title: 'Project 2',
+            title: 'UI/UX design',
             category: 'Web Design',
             client: 'Go Cart',
             date: '2025-01-01',
             description: 'Consumable goods supply chain connecting suppliers to vendors and cuustomers.',
             challenge: 'A key challenge was organizing the companys extensive and frequently changing inventory into a user-friendly layout that allowed for quick navigation and efficient bulk ordering.            ',
             solution: 'The solution involved implementing a dynamic filtering system with clear product categories, search functionality, and bulk order options, all integrated into a responsive, easy-to-navigate interface.',
-            images: ['./Assets/previews/witz2.png']
+        
         },
         'project3': {
-            title: 'Project 3',
-            category: 'UI/UX Design',
+            title: 'Mobile App UI',
+            category: 'UI/UX',
             client: 'Waigapharm',
             date: '2024-08-04',
-            description: 'Description of Project 3.',
-            challenge: 'Challenge of Project 3.',
-            solution: 'Solution for Project 3.',
-            images: ['image5.jpg', 'image6.jpg']
+            description: 'Mobile App UI for medicine delivery',
+            challenge: 'Ensuring clear and intuitive navigation for users of all ages and digital literacy levels can be a major challenge in designing a medicine delivery app UI.',
+            solution: 'We simplified the interface with large icons and clear steps to make navigation easy for all users.',
+            
         },
         'project4': {
-            title: 'Project 4',
-            category: 'Web Development',
-            client: 'Client B',
+            title: 'Explainer Video',
+            category: 'Motion',
+            client: 'Neema Stores',
             date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            description: 'Animated video to showcase how to shop on Neema stores easily.',
+            challenge: ' We faced difficulty balancing visual appeal with instructional clarity, as overly complex animations risked distracting from key shopping steps.',
+            solution: ' We developed a streamlined storyboard that aligned motion graphics with precise voiceover cues, ensuring each animation enhanced rather than overwhelmed the instructional flow.',
+        
         },
         'project5': {
-            title: 'Project 5',
-            category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            title: 'Children Storybook',
+            category: 'Print',
+            client: 'Sarah N',
+            date: '2025-02-03',
+            description: 'Visually appealing children storybook with colorful images and engaging words for kids',
+            challenge: ' We found it challenging to create illustrations that were both visually engaging and age-appropriate while aligning with the tone of the story.',
+            solution: 'We used bright, simple visuals with expressive characters and tested early drafts with children to ensure the style resonated with the target age group.',
         },
         'project6': {
-            title: 'Project 6',
-            category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            title: 'Coming soon poster',
+            category: 'Graphic',
+            client: 'Charles',
+            date: '2025-03-01',
+            description: 'Poster to announce the almost launching of the crypto trading platform in Africa.',
+            challenge: '1. Blending brand colors with specific nail set and incorporating both the brand identity while maintaining modern trendy methods.',
+            solution: 'Using more complex design tools and ensuring perfect blend of colors and showcasing the main brand message.',
         },
         'project7': {
-            title: 'Project 7',
+            title: 'Creative Portfolio Design',
             category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            client: 'Michael',
+            date: '2024-11-10',
+            description: 'Creative portfolio website for a developer/designer.',
+            challenge: 'Fully integrating both aspects of the developer/designer roles without putting much weight on one role.',
+            solution: 'Designing portions for each section to ensure each role has been captured equally to the other.',
+        
         },
         'project8': {
-            title: 'Project 8',
+            title: 'Vendor Dashboard UI',
             category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            client: 'Go Cart',
+            date: '2025-02-10',
+            description: 'UI for a vendor dashboard for a consumable goods supply chain website.',
+            challenge: 'Incorporating specific charts as per the requirements and each filter option to match the charts.',
+            solution: 'Gaining inspirations from existing designs and useing best tools to incorporate all the necessary and required systems.',
         },
         'project9': {
-            title: 'Project 9',
-            category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            title: 'Product Animation',
+            category: 'Motion',
+            client: 'Neema Stores',
+            date: '2023-06-05',
+            description: 'Product animation video for the display of a new product.',
+            challenge: 'Blending the product with the right colors.',
+            solution: 'Using uniform solid colors for the design.',
         },
         'project10': {
-            title: 'Project 10',
-            category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            title: 'Logo Design',
+            category: 'Graphic Design',
+            client: 'Lydia',
+            date: '2023-04-06',
+            description: 'Logo for Neema stores.',
+            challenge: 'Getting modern trends for the logo while maintaining the brand identity and message.',
+            solution: 'Getting insights from users for best practice and modernism.',
         },
         'project11': {
-            title: 'Project 11',
-            category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            title: 'Brand Identity',
+            category: 'Graphic Design',
+            client: 'Precious',
+            date: '2024-10-12',
+            description: 'Fashion design agency branding .',
+            challenge: 'Neatly applying overlays and brand colors to the design to ensure visibility of each element.',
+            solution: 'Applying best practice and professionalism for client satisfaction.',
         },
         'project12': {
-            title: 'Project 12',
-            category: 'Web Development',
-            client: 'Client B',
-            date: '2023-02-01',
-            description: 'Description of Project 2.',
-            challenge: 'Challenge of Project 2.',
-            solution: 'Solution for Project 2.',
-            images: ['image3.jpg', 'image4.jpg']
+            title: 'Poster Design',
+            category: 'Graphic Design',
+            client: 'Dagracia Hotel',
+            date: '2024-11-20',
+            description: 'Poster for a new special meal in the restaurant.',
+            challenge: 'Combining modernism and client satisfaction to align with target audience.',
+            solution: 'Getting insights from customers of what would be most appealing to them if presented with a choice.',
         },
     };
     
@@ -401,12 +394,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>${project.solution}</p>
             </div>
             <div class="modal-gallery">
-                ${project.images.map(image => `
-                    <div class="gallery-item">
-                        <img src="${image}" alt="${project.title}">
-                    </div>
-                `).join('')}
-            </div>
+  ${
+    Array.isArray(project.images)
+      ? project.images.map(image => `
+          <div class="gallery-item">
+            <img src="${image}" alt="${project.title}">
+          </div>
+        `).join('')
+      : ''
+  }
+</div>
+
         `;
         
         // Show modal
