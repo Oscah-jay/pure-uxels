@@ -757,3 +757,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Scroll to top when button is clicked
+backToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
