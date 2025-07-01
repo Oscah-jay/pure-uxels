@@ -1,0 +1,168 @@
+{
+    "project1": {
+      "title": "Neon Brand Identity",
+      "client": "Neon Tech",
+      "category": "Branding",
+      "date": "June 2023",
+      "description": "A complete brand identity for Neon Tech...",
+      "challenge": "Create a modern and vibrant brand identity...",
+      "solution": "We developed a neon-inspired color palette...",
+      "images": [
+        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ]
+    },
+    "project2": {
+      "title": "E-commerce Website",
+      "client": "Fashion Forward",
+      "category": "Web Design",
+      "date": "May 2023",
+      "description": "A fully responsive e-commerce website...",
+      "challenge": "Design a user-friendly e-commerce platform...",
+      "solution": "We created a minimalist design...",
+      "images": [
+        "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      ]
+    },
+    "project3": {
+        "title": "Mobile App UI",
+        "client": "HealthTrack",
+        "category": "UI/UX",
+        "date": "April 2023",
+        "description": "A comprehensive UI/UX design for HealthTrack, a fitness and wellness tracking mobile application. The design focuses on clarity, ease of use, and visual appeal.",
+        "challenge": "Create an intuitive and engaging user interface that makes tracking health metrics simple and motivating for users.",
+        "solution": "We designed a clean, visually appealing interface with customizable dashboards, progress visualizations, and gamification elements to keep users engaged.",
+        "images": [
+            "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project4": {
+        "title": "Product Animation",
+        "client": "TechGadget",
+        "category": "Motion",
+        "date": "March 2023",
+        "description": "A series of product animations for TechGadget's new line of smart home devices. The animations showcase the products' features and functionality in an engaging way.",
+        "challenge": "Create visually stunning animations that effectively communicate the products' features and benefits to potential customers.",
+        "solution": "We developed a series of 3D animations that highlight the products' design and functionality, with a focus on user interaction and real-world applications.",
+        "images": [
+            "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project5": {
+        "title": "Magazine Design",
+        "client": "Urban Culture",
+        "category": "Print",
+        "date": "February 2023",
+        "description": "A complete magazine design for Urban Culture, a publication focused on city life, art, and culture. The design includes layout, typography, and visual elements.",
+        "challenge": "Create a visually striking magazine layout that balances text and imagery while maintaining readability and visual interest.",
+        "solution": "We developed a grid-based layout with dynamic typography and a bold color scheme, creating a distinctive visual identity for the publication.",
+        "images": [
+            "https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1544133782-76957f170d8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1520013817300-1f4c1cb245ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project6": {
+        "title": "Coffee Shop Branding",
+        "client": "Brew & Co.",
+        "category": "Branding",
+        "date": "January 2023",
+        "description": "A comprehensive brand identity for Brew & Co., a specialty coffee shop. The project included logo design, packaging, signage, and marketing materials.",
+        "challenge": "Create a warm, inviting brand identity that communicates the quality and craftsmanship of the coffee while appealing to a modern audience.",
+        "solution": "We developed a rustic yet contemporary brand identity with hand-drawn elements, earthy colors, and tactile materials to create an authentic, artisanal feel.",
+        "images": [
+            "https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1525480122447-64809d765a77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1442975631115-c4f7b05b6107?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project7": {
+        "title": "Portfolio Website",
+       " client": "Alex Chen Photography",
+        "category": "Web Design",
+        "date": "December 2022",
+        "description": "A portfolio website for Alex Chen, a professional photographer. The website showcases his work with a focus on visual impact and ease of navigation.",
+        "challenge": "Create a website that showcases the photographer's work effectively while providing a seamless user experience across devices.",
+        "solution": "We designed a minimalist website with a focus on large, high-quality images, smooth transitions, and intuitive navigation to create an immersive viewing experience.",
+        "images": [
+            "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1454692155838-6e638e2644de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project8": {
+        "title": "Dashboard UI",
+        "client": "DataViz",
+        "category": "UI/UX",
+        "date": "November 2022",
+        "description": "A dashboard UI design for DataViz, a data visualization platform. The design focuses on clarity, usability, and effective data presentation.",
+        "challenge": "Create a dashboard interface that presents complex data in a clear, accessible way while providing powerful customization options.",
+        "solution": "We designed a modular dashboard with customizable widgets, clear data visualizations, and an intuitive interface that allows users to quickly access and understand their data.",
+        "images": [
+            "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project9": {
+        "title": "Explainer Video",
+        "client": "EcoSolutions",
+        "category": "Motion",
+        "date": "October 2022",
+        "description": "An explainer video for EcoSolutions, a company focused on sustainable products. The video communicates the company's mission and product benefits.",
+        "challenge": "Create an engaging and informative video that explains complex sustainability concepts in a simple, accessible way.",
+        "solution": "We developed a 2D animation with a friendly, approachable style, using metaphors and visual storytelling to communicate the company's message effectively.",
+        "images": [
+            "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1576633587382-13ddf37b1fc1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project10": {
+        "title": "Packaging Design",
+        "client": "Organic Essentials",
+        "category": "Print",
+        "date": "September 2022",
+        "description": "A packaging design for Organic Essentials, a natural skincare brand. The design reflects the brand's commitment to sustainability and natural ingredients.",
+        "challenge": "Create packaging that communicates the brand's natural, eco-friendly values while standing out on retail shelves.",
+        "solution": "We developed a clean, minimalist packaging design with sustainable materials, botanical illustrations, and a soft color palette to reflect the natural ingredients.",
+        "images": [
+            "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1556638522-8e718b3c5f7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project11": {
+        "title": "Fashion Brand Identity",
+        "client": "Moderne",
+        "category": "Branding",
+        "date": "August 2022",
+        "description": "A brand identity for Moderne, a contemporary fashion label. The project included logo design, typography, color palette, and brand guidelines.",
+        "challenge": "Create a sophisticated, timeless brand identity that appeals to a fashion-forward audience while maintaining versatility across applications.",
+        "solution": "We developed a minimalist, elegant brand identity with a monogram logo, refined typography, and a neutral color palette with subtle accent colors.",
+        "images": [
+            "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    "project12": {
+        "title": "Restaurant Website",
+        "client": "Sapore",
+        "category": "Web Design",
+        "date": "July 2022",
+        "description": "A website for Sapore, an upscale Italian restaurant. The website features a modern design, online reservations, and menu showcase.",
+        "challenge": "Create a website that reflects the restaurant's elegant atmosphere while providing practical functionality for customers.",
+        "solution": "We designed a visually rich website with high-quality food photography, intuitive navigation, and seamless integration of reservation and menu systems.",
+        "images": [
+            "https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        ]
+    }
+    
+  }
+  
