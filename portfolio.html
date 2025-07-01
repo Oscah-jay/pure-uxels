@@ -254,12 +254,13 @@
                 </div>
             </div>
             
+            <div id="projectsContainer"></div>
             <div class="load-more-container">
                 <button class="load-more-btn">
-                    <span>Load More</span>
-                    <i class="fas fa-spinner"></i>
+                  <span>Load More</span>
+                  <i class="fas fa-spinner" style="display: none;"></i>
                 </button>
-            </div>
+              </div>
         </div>
     </section>
 
@@ -381,42 +382,6 @@
             </div>
         </div>
     </div>
-
-    <h1>My Projects</h1>
-    <div id="projectsContainer"></div>
-  
-    <script>
-      async function fetchProjects() {
-        try {
-          const response = await fetch('projects.json'); // adjust path if needed
-          const projectsData = await response.json();
-  
-          const container = document.getElementById('projectsContainer');
-  
-          for (let key in projectsData) {
-            const project = projectsData[key];
-            const projectEl = document.createElement('div');
-            projectEl.className = 'project-card';
-            projectEl.innerHTML = `
-              <h2>${project.title}</h2>
-              <p><strong>Client:</strong> ${project.client}</p>
-              <p><strong>Category:</strong> ${project.category}</p>
-              <p><strong>Date:</strong> ${project.date}</p>
-              <p>${project.description}</p>
-              <p><strong>Challenge:</strong> ${project.challenge}</p>
-              <p><strong>Solution:</strong> ${project.solution}</p>
-              <img src="${project.images[0]}" alt="${project.title}" style="width: 300px; margin-top: 10px;">
-            `;
-            container.appendChild(projectEl);
-          }
-        } catch (error) {
-          console.error("Failed to load projects:", error);
-        }
-      }
-  
-      fetchProjects();
-    </script>
-  
 
     <script src="./scripts/portfolio.js"></script>
 </body>
