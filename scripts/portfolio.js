@@ -178,67 +178,71 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     let allProjects = [];
-let currentIndex = 0;
-const itemsPerLoad = 4;
 
-const loadMoreBtn = document.querySelector('.load-more-btn');
-const loadMoreText = loadMoreBtn.querySelector('span');
-const spinner = loadMoreBtn.querySelector('i');
-const container = document.getElementById('projectsContainer');
-
-// Fetch and store projects only (no initial render)
-async function fetchProjects() {
-  try {
-    const response = await fetch('projects.json'); // Adjust path if needed
-    const data = await response.json();
-    allProjects = Object.values(data);
-  } catch (error) {
-    console.error("Failed to fetch projects:", error);
-  }
-}
-
-// Called only when button is clicked
-function loadMoreProjects() {
-  loadMoreBtn.classList.add('loading');
-  loadMoreText.textContent = 'Loading...';
-  spinner.style.display = 'inline-block';
-
-  setTimeout(() => {
-    const nextProjects = allProjects.slice(currentIndex, currentIndex + itemsPerLoad);
-
-    nextProjects.forEach(project => {
-      const projectEl = document.createElement('div');
-      projectEl.className = 'project-card';
-      projectEl.innerHTML = `
-        <h2>${project.title}</h2>
-        <p><strong>Client:</strong> ${project.client}</p>
-        <p><strong>Category:</strong> ${project.category}</p>
-        <p><strong>Date:</strong> ${project.date}</p>
-        <p>${project.description}</p>
-        <p><strong>Challenge:</strong> ${project.challenge}</p>
-        <p><strong>Solution:</strong> ${project.solution}</p>
-        <img src="${project.images[0]}" alt="${project.title}">
-      `;
-      container.appendChild(projectEl);
-    });
-
-    currentIndex += itemsPerLoad;
-
-    loadMoreBtn.classList.remove('loading');
-    loadMoreText.textContent = 'Load More';
-    spinner.style.display = 'none';
-
-    if (currentIndex >= allProjects.length) {
-      loadMoreText.textContent = 'No More Projects';
-      loadMoreBtn.disabled = true;
-      loadMoreBtn.style.opacity = '0.5';
-      loadMoreBtn.style.cursor = 'not-allowed';
+    // Element references
+    const loadMoreBtn = document.querySelector('.load-more-btn');
+    const loadMoreText = loadMoreBtn.querySelector('span');
+    const spinner = loadMoreBtn.querySelector('i');
+    const overlay = document.getElementById('projectsOverlay');
+    const overlayGrid = document.getElementById('overlayGrid');
+    const overlayClose = document.getElementById('overlayClose');
+    
+    // Fetch all projects on page load
+    async function fetchProjects() {
+      try {
+        const response = await fetch('projects.json');
+        const data = await response.json();
+        allProjects = Object.values(data);
+      } catch (error) {
+        console.error("Failed to load projects:", error);
+      }
     }
-  }, 1000);
-}
-
-// Fetch data only (do not render anything yet)
-fetchProjects();
+    
+    // Show all projects in overlay
+    function showProjectsOverlay() {
+      loadMoreBtn.classList.add('loading');
+      loadMoreText.textContent = 'Loading...';
+      spinner.style.display = 'inline-block';
+    
+      setTimeout(() => {
+        overlayGrid.innerHTML = ''; // clear previous
+    
+        allProjects.forEach(project => {
+          const projectEl = document.createElement('div');
+          projectEl.className = 'project-card';
+          projectEl.innerHTML = `
+            <h2>${project.title}</h2>
+            <p><strong>Client:</strong> ${project.client}</p>
+            <p><strong>Category:</strong> ${project.category}</p>
+            <p><strong>Date:</strong> ${project.date}</p>
+            <p>${project.description}</p>
+            <video src="${project.videos ? project.videos[0] : ''}" autoplay muted loop playsinline style="width: 100%; border-radius: 8px; margin-top: 1rem;"></video>
+          `;
+          overlayGrid.appendChild(projectEl);
+        });
+    
+        overlay.style.display = 'flex'; // show overlay
+        spinner.style.display = 'none';
+      }, 800);
+    }
+    
+    // Close overlay
+    overlayClose.addEventListener('click', () => {
+        overlay.style.display = 'none';
+      
+        // Reset Load More button
+        loadMoreBtn.classList.remove('loading');
+        loadMoreText.textContent = 'Load More';
+        spinner.style.display = 'none';
+      });
+      
+    
+   
+    
+    loadMoreBtn.addEventListener('click', showProjectsOverlay);
+    
+    fetchProjects();
+    
 
 // Wait for click
 loadMoreBtn.addEventListener('click', loadMoreProjects);

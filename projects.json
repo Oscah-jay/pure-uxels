@@ -1,128 +1,110 @@
 {
     "project1": {
-      "title": "Neon Brand Identity",
-      "client": "Neon Tech",
-      "category": "Branding",
-      "date": "June 2023",
-      "images": [
-        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      "title": "Childrens home visit ",
+      "client": "Fabib Production",
+      "category": "Motion",
+      "date": "July 14 2025",
+      "videos": [
+        "Assets/videos/Children’s Home Visit.mp4"
       ]
     },
     "project2": {
-      "title": "E-commerce Website",
-      "client": "Fashion Forward",
-      "category": "Web Design",
-      "date": "May 2023",
-      "images": [
-        "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+      "title": "Mental Health Awareness ",
+      "client": "Zen Health",
+      "category": "Motion",
+      "date": "July 8 2025",
+      "videos": [
+        "Assets/videos/If the Mind Struggles, Everything Struggles..mp4"
       ]
     },
     "project3": {
-        "title": "Mobile App UI",
-        "client": "HealthTrack",
-        "category": "UI/UX",
-        "date": "April 2023",
-        "images": [
-            "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "title": "Key Services",
+        "client": "Auto Progress",
+        "category": "Motion",
+        "date": "July 6 2025",
+        "videos": [ 
+            "Assets/videos/lost your key come get it back.mp4"
         ]
     },
     "project4": {
-        "title": "Product Animation",
-        "client": "TechGadget",
+        "title": "Food Animation",
+        "client": "Quest Foods",
         "category": "Motion",
-        "date": "March 2023",
-        "images": [
-            "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "date": "June 8 2025",
+        "videos": [
+            "Assets/videos/Curry.mp4"
         ]
     },
     "project5": {
-        "title": "Magazine Design",
-        "client": "Urban Culture",
-        "category": "Print",
-        "date": "February 2023",
-        "images": [
-            "https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1544133782-76957f170d8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1520013817300-1f4c1cb245ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "title": "flower Pot ",
+        "client": "Nairobi Flower Pots",
+        "category": "Motion",
+        "date": "June 17 2025",
+        "videos": [
+            "Assets/videos/Cultivating Beauty, One Pot at a Time.mp4"
         ]
     },
     "project6": {
-        "title": "Coffee Shop Branding",
-        "client": "Brew & Co.",
-        "category": "Branding",
-        "date": "January 2023",
-        "images": [
-            "https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1525480122447-64809d765a77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1442975631115-c4f7b05b6107?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "title": "Water Refill Services",
+        "client": "LA Springs",
+        "category": "Motion",
+        "date": "June 27 2025",
+        "videos": [
+            "Assets/videos/From Springs to Sips Naturally.mp4"
         ]
     },
     "project7": {
-        "title": "Portfolio Website",
-       " client": "Alex Chen Photography",
-        "category": "Web Design",
-        "date": "December 2022",
-        "images": [
-            "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1454692155838-6e638e2644de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "title": "Mental Health ",
+       " client": "Zen Health",
+        "category": "Motion",
+        "date": "June 17 2025",
+        "videos": [
+           "Assets/videos/healing begins (2).mp4"
         ]
     },
     "project8": {
-        "title": "Dashboard UI",
-        "client": "DataViz",
-        "category": "UI/UX",
-        "date": "November 2022",
-        "images": [
-            "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "title": "Insurance",
+        "client": "Hausa Insurance",
+        "category": "Motion",
+        "date": "July 9 2025",
+        "videos": [
+            "Assets/videos/Wander far.mp4"
         ]
     },
     "project9": {
-        "title": "Explainer Video",
-        "client": "EcoSolutions",
+        "title": "Children Support Initiative",
+        "client": "Wegner Foundation",
         "category": "Motion",
-        "date": "October 2022",
-        "images": [
-            "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1576633587382-13ddf37b1fc1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "date": "June 23 2025",
+        "videos": [
+           "Assets/videos/WE support less privileged children in africa.mp4"
         ]
     },
     "project10": {
-        "title": "Packaging Design",
-        "client": "Organic Essentials",
-        "category": "Print",
-        "date": "September 2022",
-        "images": [
-            "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1556638522-8e718b3c5f7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "title": "Ecommerce services",
+        "client": "African Script",
+        "category": "Motion",
+        "date": "June 4 2025",
+        "videos": [
+            "Assets/videos/Need a Smooth Way to Get Paid from Anywhere.mp4"
         ]
     },
     "project11": {
-        "title": "Fashion Brand Identity",
-        "client": "Moderne",
-        "category": "Branding",
-        "date": "August 2022",
+        "title": "Car Accessories",
+        "client": "Autoprogress",
+        "category": "Motion",
+        "date": "July 6 2025",
         "videos": [
-            "assets/videos/AS1.mp4"
+            "Assets/videos/we bring back the beat.mp4"
           ]
     },
     "project12": {
-        "title": "Restaurant Website",
-        "client": "Sapore",
-        "category": "Web Design",
-        "date": "July 2022",
-        "images": [
-            "https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+        "title": "ICT Firm",
+        "client": "African Script",
+        "category": "Motion",
+        "date": "June 30 2025",
+        "videos": [
+            "Assets/videos/Designs That Speak Louder Than Words.mp4"
         ]
     }
     
