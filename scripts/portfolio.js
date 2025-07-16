@@ -1,5 +1,38 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize reveal animations
+    function initRevealAnimations() {
+        const revealElements = document.querySelectorAll('.reveal-text');
+        
+        // Add initial state
+        revealElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+        });
+        
+        // Trigger animations on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.revealDelay || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, delay);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+    
+    // Initialize on page load
+    initRevealAnimations();
+});
     // Loading Animation
     const loader = document.querySelector('.loader');
     const loaderPercentage = document.querySelector('.loader-percentage');
@@ -579,4 +612,4 @@ loadMoreBtn.addEventListener('click', loadMoreProjects);
         setTimeout(revealElements, 2600);
         handleOverlayScroll();
     });
-});
+

@@ -43,6 +43,150 @@ body {
     transition: var(--transition);
 }
 
+/* Missing Text Reveal Animation Styles - ADD THESE */
+.reveal-text {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: var(--text-color); /* Ensure text is visible */
+}
+
+.reveal-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: translateX(-100%); /* Start from left */
+    transition: transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.reveal-text.active::after {
+    transform: translateX(100%); /* Slide to right */
+}
+
+/* Ensure text content is above the sliding overlay */
+.reveal-text span,
+.reveal-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Staggered animation delays for multiple text elements */
+.reveal-text:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.reveal-text:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.reveal-text:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+/* Alternative method using clip-path for better browser support */
+.reveal-text-alt {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: transparent;
+}
+
+.reveal-text-alt::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    z-index: 2;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.reveal-text-alt::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.reveal-text-alt.active::before {
+    clip-path: inset(0 0 0 0);
+    transition-delay: 0.3s;
+}
+
+.reveal-text-alt.active::after {
+    transform: translateX(100%);
+}
+
+/* Fallback for browsers that don't support clip-path */
+@supports not (clip-path: inset(0 0 0 0)) {
+    .reveal-text-alt {
+        color: var(--text-color);
+    }
+    
+    .reveal-text-alt::before {
+        display: none;
+    }
+}
+
+/* Enhanced reveal animation with better performance */
+.reveal-text-enhanced {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.reveal-text-enhanced::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.reveal-text-enhanced.active::after {
+    transform: translateX(100%);
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-text::after,
+    .reveal-text-alt::after,
+    .reveal-text-enhanced::after {
+        transition: none;
+        transform: translateX(100%);
+    }
+    
+    .reveal-text.active::after,
+    .reveal-text-alt.active::after,
+    .reveal-text-enhanced.active::after {
+        transform: translateX(100%);
+    }
+    
+    .reveal-text-alt.active::before {
+        clip-path: inset(0 0 0 0);
+        transition: none;
+    }
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -579,7 +723,7 @@ nav {
     left: 0;
     width: 100%;
     padding: 30px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.4));
     color: white;
     transform: translateY(20px);
     opacity: 0;
@@ -596,7 +740,7 @@ nav {
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 10px;
 }
 
