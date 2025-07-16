@@ -249,13 +249,16 @@ function isValidEmail(email) {
     const mapContainer = document.querySelector('.map-container');
     
     function animateMap() {
+        if (!mapContainer) return; // 🛡️ Stop if element doesn't exist
+    
         const mapTop = mapContainer.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        
+    
         if (mapTop < windowHeight - 100) {
             mapContainer.classList.add('active');
         }
     }
+    
     
     // Scroll Reveal Animation
     function revealElements() {
