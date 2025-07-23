@@ -106,6 +106,78 @@
         "videos": [
             "Assets/videos/Designs That Speak Louder Than Words.mp4"
         ]
+    },
+    "project13": {
+        "title": "Car Insurance",
+        "client": "Hausa Insurance",
+        "category": "Motion",
+        "date": "June 19 2025",
+        "videos": [
+            "Assets/videos/car insurance.mp4"
+        ]
+    },
+    "project14": {
+        "title": "Food Delivery Services",
+        "client": "Quest Foods",
+        "category": "Motion",
+        "date": "June 15 2025",
+        "videos": [
+            "Assets/videos/Crispy on the Outside, Tender on the Inside.mp4"
+        ]
+    },
+    "project15": {
+        "title": "Car Accessories",
+        "client": "Autoprogress",
+        "category": "Graphic Design",
+        "date": "June 14 2025",
+        "images": [
+            "Assets/videos/diagnostics.png"
+        ]
+    },
+    "project16": {
+        "title": "Friendly Match",
+        "client": "Autoprogress",
+        "category": "Graphic Design",
+        "date": "June 4 2025",
+        "images": [
+            "Assets/videos/Friendly Match.png"
+        ]
+    },
+    "project17": {
+        "title": "Food Delivery Services",
+        "client": "Quest Foods",
+        "category": "Motion",
+        "date": "June 3 2025",
+        "videos": [
+            "Assets/videos/New Menu.mp4"
+        ]
+    },
+    "project18": {
+        "title": "Children Support Initiative",
+        "client": "Wegner Foundation",
+        "category": "Motion",
+        "date": "June 2 2025",
+        "videos": [
+            "Assets/videos/struggles to strength.mp4"
+        ]
+    },
+    "project19": {
+        "title": "ICT Firm",
+        "client": "African Script",
+        "category": "Motion",
+        "date": "June 19 2025",
+        "videos": [
+            "Assets/videos/We Don't Chase Trends...mp4"
+        ]
+    },
+    "project20": {
+        "title": "Food Delivery Services",
+        "client": "Quest Foods",
+        "category": "Motion",
+        "date": "June 9 2025",
+        "videos": [
+            "Assets/videos/Taste the Catch of the Day.mp4"
+        ]
     }
     
   }
