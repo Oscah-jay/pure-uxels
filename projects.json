@@ -126,21 +126,21 @@
         ]
     },
     "project15": {
-        "title": "Car Accessories",
-        "client": "Autoprogress",
-        "category": "Graphic Design",
+        "title": "Beehive Services",
+        "client": "Coupon Beehive",
+        "category": "Motion",
         "date": "June 14 2025",
-        "images": [
-            "Assets/videos/diagnostics.png"
+        "videos": [
+            "Assets/videos/Smartly Designed. Bee-Approved!.mp4"
         ]
     },
     "project16": {
-        "title": "Friendly Match",
+        "title": "Car Radio Repair",
         "client": "Autoprogress",
-        "category": "Graphic Design",
+        "category": "Motion",
         "date": "June 4 2025",
         "images": [
-            "Assets/videos/Friendly Match.png"
+            "Assets/videos/we bring back the beat.mp4"
         ]
     },
     "project17": {
