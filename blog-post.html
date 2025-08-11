@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Pure UXels</title>
+    <link rel="stylesheet" href="./styles/blog.css">
+    <link rel="stylesheet" href="./styles/blog-post.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="Assets/favicons/favicon1.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Assets/favicons/favicon1.png">
+    
+    <!-- Open Graph Meta Tags (will be populated by JavaScript) -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-title">LOADING</div>
+            <div class="loader-subtitle">PREPARING ARTICLE</div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+            <div class="loader-percentage">0%</div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg class="logo-icon" width="50" height="50" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="#ff4b33" stroke-width="3" fill="none" />
+                        <path d="M35,65 L65,35 M35,35 L65,65" stroke="#ff4b33" stroke-width="3" />
+                    </svg>
+                    <span>Pure UXels</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links1">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./About.html">About</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./blog.html" class="active">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Content -->
+    <main class="blog-post-main">
+        <!-- Loading State -->
+        <div class="post-loading" id="post-loading">
+            <div class="container">
+                <div class="loading-content">
+                    <div class="loading-spinner"></div>
+                    <p>Loading article...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div class="post-error" id="post-error" style="display: none;">
+            <div class="container">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Article Not Found</h2>
+                    <p>The article you're looking for doesn't exist or has been moved.</p>
+                    <a href="./blog.html" class="btn primary">Back to Blog</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post Content -->
+        <article class="blog-post-article" id="blog-post-content" style="display: none;">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb-section">
+                <div class="container">
+                    <nav class="breadcrumb">
+                        <a href="./index.html">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <a href="./blog.html">Blog</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-current" id="breadcrumb-title">Article</span>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Post Header -->
+            <header class="post-header">
+                <div class="container">
+                    <div class="post-meta-top">
+                        <div class="post-categories" id="post-categories"></div>
+                        <div class="post-reading-time" id="reading-time"></div>
+                    </div>
+                    <h1 class="post-title" id="post-title"></h1>
+                    <p class="post-excerpt" id="post-excerpt"></p>
+                    <div class="post-meta">
+                        <div class="post-author" id="post-author"></div>
+                        <div class="post-date" id="post-date"></div>
+                        <div class="post-share">
+                            <button class="share-btn" id="share-btn">
+                                <i class="fas fa-share-alt"></i>
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <div class="post-featured-image" id="post-featured-image">
+                <div class="container">
+                    <div class="image-container">
+                        <img id="featured-img" src="/placeholder.svg" alt="" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post Content -->
+            <div class="post-content-section">
+                <div class="container">
+                    <div class="post-layout">
+                        <div class="post-content" id="post-body">
+                            <!-- Content will be loaded here -->
+                        </div>
+                        
+                        <aside class="post-sidebar">
+                            <!-- Table of Contents -->
+                            <div class="toc-widget" id="toc-widget">
+                                <h3>Table of Contents</h3>
+                                <nav class="toc-nav" id="toc-nav">
+                                    <!-- TOC will be generated here -->
+                                </nav>
+                            </div>
+
+                            <!-- Share Widget -->
+                            <div class="share-widget">
+                                <h3>Share This Article</h3>
+                                <div class="share-buttons">
+                                    <a href="#" class="share-button twitter" id="share-twitter">
+                                        <i class="fab fa-twitter"></i>
+                                        Twitter
+                                    </a>
+                                    <a href="#" class="share-button facebook" id="share-facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                        Facebook
+                                    </a>
+                                    <a href="#" class="share-button linkedin" id="share-linkedin">
+                                        <i class="fab fa-linkedin-in"></i>
+                                        LinkedIn
+                                    </a>
+                                    <button class="share-button copy" id="copy-link">
+                                        <i class="fas fa-link"></i>
+                                        Copy Link
+                                    </button>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post Navigation -->
+            <div class="post-navigation" id="post-navigation">
+                <div class="container">
+                    <div class="nav-links">
+                        <div class="nav-previous" id="nav-previous">
+                            <!-- Previous post link -->
+                        </div>
+                        <div class="nav-next" id="nav-next">
+                            <!-- Next post link -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Posts -->
+            <section class="related-posts" id="related-posts">
+                <div class="container">
+                    <h2>Related Articles</h2>
+                    <div class="related-posts-grid" id="related-posts-grid">
+                        <!-- Related posts will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="reveal-text">Ready to start your project?</h2>
+                <p class="reveal-text">Let's create something amazing together.</p>
+                <a href="./contact.html" class="btn primary reveal">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Pure UXels</h2>
+                    <p>Creative Digital Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./services.html">Services</a></li>
+                            <li><a href="./about.html">About</a></li>
+                            <li><a href="./portfolio.html">Portfolio</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>UI/UX Design</li>
+                            <li>Graphic Design</li>
+                            <li>Video Production</li>
+                            <li>Digital Marketing</li>
+                            <li>Brand Identity</li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Subscribe</h3>
+                        <p>Subscribe to our newsletter to receive updates</p>
+                        <form class="subscribe-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pure UXels. All Rights Reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/PureUxels"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/pure_uxels"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/pure-uxels-476365361/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Let's Talk Button -->
+    <button id="lets-talk-btn" class="lets-talk-btn">MENU</button>
+
+    <!-- Overlay Menu -->
+    <div id="overlay-menu" class="overlay-menu">
+        <div class="overlay-header">
+            <span class="menu-label">MENU</span>
+            <div class="header-right">
+                <span class="lets-talk-label">LET'S TALK</span>
+                <button id="close-overlay" class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="overlay-content">
+            <div class="nav-links">
+                <a href="./portfolio.html" class="nav-link">Work</a>
+                <a href="./services.html" class="nav-link">Services</a>
+                <a href="./About.html" class="nav-link">About</a>
+                <a href="./contact.html" class="nav-link">Contact</a>
+                <a href="./blog.html" class="nav-link">Blog</a>
+            </div>
+            
+            <div class="contact-info">
+                <a href="mailto:studio@pureuxels.com" class="contact-link">studio@pureuxels.com</a>
+                <a href="tel:+254798785974" class="contact-link phone">(+254) 798785974</a>
+                <div class="address">
+                    <p>Nairobi</p>
+                    <p>Kenya</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/sanity-client.js"></script>
+    <script src="./scripts/blog-post.js"></script>
+    <script src="./scripts/portfolio.js"></script>
+</body>
+</html>
