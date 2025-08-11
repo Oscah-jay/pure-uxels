@@ -69,7 +69,7 @@ class SanityClient {
   // Initialize Sanity client
   // Replace with your actual Sanity project details
   const sanityClient = new SanityClient({
-    projectId: "your-project-id", // Replace with your Sanity project ID
+    projectId: "j5s1dfn3", // Replace with your Sanity project ID
     dataset: "production", // Replace with your dataset name
     apiVersion: "2023-05-03",
     useCdn: true,

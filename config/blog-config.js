@@ -4,7 +4,7 @@
 const blogConfig = {
     // Sanity Configuration
     sanity: {
-      projectId: "your-project-id", // Replace with your Sanity project ID
+      projectId: "j5s1dfn3", // Replace with your Sanity project ID
       dataset: "production", // Replace with your dataset name
       apiVersion: "2023-05-03",
       useCdn: true, // Set to false for development
@@ -22,7 +22,7 @@ const blogConfig = {
     // SEO Settings
     seo: {
       siteName: "Pure UXels",
-      siteUrl: "https://yourwebsite.com", // Replace with your website URL
+      siteUrl: "https://pureuxels.com", // Replace with your website URL
       defaultImage: "/Assets/og-image.jpg", // Default social sharing image
       twitterHandle: "@PureUxels",
     },
