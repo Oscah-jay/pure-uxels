@@ -6,7 +6,7 @@ const blogConfig = {
     sanity: {
       projectId: "j5s1dfn3", // Replace with your Sanity project ID
       dataset: "production", // Replace with your dataset name
-      apiVersion: "2023-05-03",
+      apiVersion: "2025-08-12",
       useCdn: true, // Set to false for development
     },
   
