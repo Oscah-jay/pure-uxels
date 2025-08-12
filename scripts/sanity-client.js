@@ -3,7 +3,7 @@ class SanityClient {
     constructor(config) {
       this.projectId = config.projectId
       this.dataset = config.dataset
-      this.apiVersion = config.apiVersion || "2023-05-03"
+      this.apiVersion = config.apiVersion || "2025-08-12"
       this.useCdn = config.useCdn !== false
       this.baseUrl = `https://${this.projectId}.${this.useCdn ? "apicdn" : "api"}.sanity.io/v${this.apiVersion}/data/query/${this.dataset}`
     }
@@ -67,11 +67,10 @@ class SanityClient {
   }
   
   // Initialize Sanity client
-  // Replace with your actual Sanity project details
   const sanityClient = new SanityClient({
-    projectId: "j5s1dfn3", // Replace with your Sanity project ID
-    dataset: "production", // Replace with your dataset name
-    apiVersion: "v2025-08-12",
+    projectId: "j5s1dfn3", 
+    dataset: "production", 
+    apiVersion: "2025-08-12",
     useCdn: true,
   })
   
