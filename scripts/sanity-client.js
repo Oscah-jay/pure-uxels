@@ -42,18 +42,12 @@ class SanityClient {
     // Get image URL from Sanity asset reference
     imageUrl(source) {
       if (!source || !source.asset || !source.asset._ref) {
-        return ""; // return placeholder or empty string
+        return ''; // or return a placeholder image URL
       }
-    
-      const refParts = source.asset._ref.split("-");
-      if (refParts.length < 4) {
-        console.warn("Invalid Sanity image ref format:", source.asset._ref);
-        return "";
-      }
-    
-      const [, id, dimensions, format] = refParts;
+      const [ , id, dimensions, format ] = source.asset._ref.split('-');
       return `https://cdn.sanity.io/images/${this.projectId}/${this.dataset}/${id}-${dimensions}.${format}`;
     }
+    
     
     // Get optimized image URL with parameters
     imageUrlBuilder(source, options = {}) {
