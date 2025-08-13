@@ -1,9 +1,9 @@
-/* Individual Blog Post Styles */
+/* Individual Blog Post Styles - Mobile Optimized */
 
 /* Post Loading States */
 .post-loading,
 .post-error {
-  padding: 120px 0;
+  padding: 80px 0; /* Reduced padding for mobile */
   text-align: center;
 }
 
@@ -11,16 +11,17 @@
 .error-content {
   max-width: 400px;
   margin: 0 auto;
+  padding: 0 20px; /* Added horizontal padding */
 }
 
 .error-content i {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Slightly smaller for mobile */
   color: var(--primary-color);
   margin-bottom: 20px;
 }
 
 .error-content h2 {
-  font-size: 2rem;
+  font-size: 1.8rem; /* More mobile-friendly size */
   margin-bottom: 15px;
 }
 
@@ -31,21 +32,25 @@
 
 /* Breadcrumb */
 .breadcrumb-section {
-  padding: 120px 0 20px;
+  padding: 100px 0 20px; /* Reduced top padding */
   background-color: var(--background);
 }
 
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
+  gap: 8px; /* Smaller gap for mobile */
+  font-size: 0.85rem; /* Slightly smaller font */
+  flex-wrap: wrap; /* Allow wrapping on very small screens */
 }
 
 .breadcrumb a {
   color: var(--text-light);
   text-decoration: none;
   transition: var(--transition);
+  min-height: 44px; /* Better touch target */
+  display: flex;
+  align-items: center;
 }
 
 .breadcrumb a:hover {
@@ -63,7 +68,7 @@
 
 /* Post Header */
 .post-header {
-  padding: 40px 0;
+  padding: 30px 0; /* Reduced padding */
   background-color: var(--background);
   text-align: center;
 }
@@ -72,14 +77,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px; /* Smaller gap */
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
 .post-categories {
   display: flex;
-  gap: 10px;
+  gap: 8px; /* Smaller gap */
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -87,12 +92,15 @@
 .post-category {
   background-color: rgba(30, 58, 138, 0.1);
   color: var(--primary-color);
-  padding: 4px 12px;
+  padding: 6px 14px; /* Larger touch target */
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  min-height: 32px; /* Better touch target */
+  display: flex;
+  align-items: center;
 }
 
 .post-reading-time {
@@ -101,38 +109,43 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  min-height: 32px; /* Consistent height */
 }
 
 .post-title {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Better mobile size */
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 20px;
-  max-width: 800px;
+  max-width: 100%; /* Full width on mobile */
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px; /* Side padding */
 }
 
 .post-excerpt {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Slightly smaller */
   color: var(--text-light);
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 100%; /* Full width on mobile */
   margin: 0 auto 30px;
+  padding: 0 20px; /* Side padding */
 }
 
 .post-meta {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px; /* Smaller gap */
   flex-wrap: wrap;
+  padding: 0 20px; /* Side padding */
 }
 
 .post-author {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-height: 44px; /* Better touch target */
 }
 
 .author-avatar {
@@ -140,6 +153,7 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .author-info {
@@ -159,6 +173,9 @@
 .post-date {
   color: var(--text-light);
   font-size: 0.9rem;
+  min-height: 44px; /* Better touch target */
+  display: flex;
+  align-items: center;
 }
 
 .share-btn {
@@ -168,11 +185,12 @@
   background-color: var(--primary-color);
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 12px 20px; /* Larger touch target */
+  border-radius: 25px; /* More rounded for mobile */
   font-size: 0.9rem;
   cursor: pointer;
   transition: var(--transition);
+  min-height: 44px; /* Better touch target */
 }
 
 .share-btn:hover {
@@ -181,7 +199,7 @@
 
 /* Featured Image */
 .post-featured-image {
-  padding: 40px 0;
+  padding: 30px 0; /* Reduced padding */
   background-color: var(--background-alt);
 }
 
@@ -190,7 +208,8 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  max-height: 500px;
+  max-height: 400px; /* Smaller max height for mobile */
+  margin: 0 20px; /* Side margins */
 }
 
 .image-container img {
@@ -201,18 +220,19 @@
 
 /* Post Content Layout */
 .post-content-section {
-  padding: 80px 0;
+  padding: 60px 0; /* Reduced padding */
 }
 
 .post-layout {
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: 60px;
+  gap: 40px; /* Smaller gap */
   align-items: start;
 }
 
 .post-content {
   max-width: none;
+  padding: 0 20px; /* Side padding for mobile */
 }
 
 /* Rich Text Content Styles */
@@ -222,69 +242,71 @@
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 30px; /* Reduced margin */
+  margin-bottom: 15px; /* Reduced margin */
   line-height: 1.3;
 }
 
 .post-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem; /* More mobile-friendly */
 }
 
 .post-content h2 {
-  font-size: 2rem;
+  font-size: 1.8rem; /* More mobile-friendly */
   color: var(--primary-color);
 }
 
 .post-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* More mobile-friendly */
 }
 
 .post-content h4 {
-  font-size: 1.3rem;
+  font-size: 1.2rem; /* More mobile-friendly */
 }
 
 .post-content p {
-  margin-bottom: 20px;
-  line-height: 1.8;
-  font-size: 1.1rem;
+  margin-bottom: 18px; /* Slightly reduced */
+  line-height: 1.7; /* Better mobile readability */
+  font-size: 1rem; /* Better mobile size */
 }
 
 .post-content ul,
 .post-content ol {
-  margin-bottom: 20px;
-  padding-left: 30px;
+  margin-bottom: 18px; /* Consistent spacing */
+  padding-left: 25px; /* Less indentation on mobile */
 }
 
 .post-content li {
-  margin-bottom: 8px;
+  margin-bottom: 6px; /* Tighter spacing */
   line-height: 1.6;
 }
 
 .post-content blockquote {
   border-left: 4px solid var(--primary-color);
-  padding: 20px 30px;
-  margin: 30px 0;
+  padding: 15px 20px; /* Less padding on mobile */
+  margin: 25px 0; /* Reduced margin */
   background-color: var(--background-alt);
   border-radius: 0 10px 10px 0;
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Better mobile size */
 }
 
 .post-content code {
   background-color: var(--background-alt);
-  padding: 2px 6px;
+  padding: 3px 6px; /* Slightly more padding */
   border-radius: 4px;
   font-family: "Courier New", monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Better mobile size */
+  word-break: break-word; /* Prevent overflow */
 }
 
 .post-content pre {
   background-color: var(--background-alt);
-  padding: 20px;
+  padding: 15px; /* Less padding on mobile */
   border-radius: 10px;
   overflow-x: auto;
   margin: 20px 0;
+  font-size: 0.85rem; /* Better mobile size */
 }
 
 .post-content pre code {
@@ -304,6 +326,9 @@
   color: var(--primary-color);
   text-decoration: underline;
   transition: var(--transition);
+  min-height: 44px; /* Better touch target */
+  display: inline-flex;
+  align-items: center;
 }
 
 .post-content a:hover {
@@ -314,21 +339,22 @@
 .post-sidebar {
   position: sticky;
   top: 120px;
+  padding: 0 20px; /* Side padding */
 }
 
 .toc-widget,
 .share-widget {
   background-color: var(--card-bg);
   border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 30px;
+  padding: 20px; /* Consistent padding */
+  margin-bottom: 25px; /* Consistent spacing */
   box-shadow: var(--shadow);
 }
 
 .toc-widget h3,
 .share-widget h3 {
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced margin */
   color: var(--text-color);
 }
 
@@ -338,13 +364,16 @@
 
 .toc-nav a {
   display: block;
-  padding: 8px 0;
+  padding: 10px 0; /* Larger touch target */
   color: var(--text-light);
   text-decoration: none;
   font-size: 0.9rem;
   transition: var(--transition);
   border-left: 2px solid transparent;
   padding-left: 15px;
+  min-height: 40px; /* Better touch target */
+  display: flex;
+  align-items: center;
 }
 
 .toc-nav a:hover,
@@ -365,14 +394,14 @@
 .share-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px; /* Smaller gap */
 }
 
 .share-button {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 15px;
+  padding: 12px 15px; /* Better touch target */
   border-radius: 8px;
   text-decoration: none;
   font-size: 0.9rem;
@@ -382,6 +411,7 @@
   cursor: pointer;
   background: none;
   text-align: left;
+  min-height: 44px; /* Better touch target */
 }
 
 .share-button.twitter {
@@ -411,7 +441,7 @@
 
 /* Post Navigation */
 .post-navigation {
-  padding: 60px 0;
+  padding: 50px 0; /* Reduced padding */
   background-color: var(--background-alt);
   border-top: 1px solid var(--border-color);
 }
@@ -419,37 +449,39 @@
 .nav-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 20px; /* Smaller gap */
+  padding: 0 20px; /* Side padding */
 }
 
 .nav-previous,
 .nav-next {
   display: block;
-  padding: 25px;
+  padding: 20px; /* Consistent padding */
   background-color: var(--card-bg);
   border-radius: 15px;
   text-decoration: none;
   transition: var(--transition);
   box-shadow: var(--shadow);
+  min-height: 80px; /* Better touch target */
 }
 
 .nav-previous:hover,
 .nav-next:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px); /* Less movement on mobile */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Reduced shadow */
 }
 
 .nav-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem; /* Smaller label */
   color: var(--text-light);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 8px;
+  margin-bottom: 6px; /* Reduced margin */
   display: block;
 }
 
 .nav-title {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Better mobile size */
   font-weight: 600;
   color: var(--text-color);
   line-height: 1.4;
@@ -461,19 +493,21 @@
 
 /* Related Posts */
 .related-posts {
-  padding: 80px 0;
+  padding: 60px 0; /* Reduced padding */
 }
 
 .related-posts h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 50px;
+  font-size: 2.2rem; /* Better mobile size */
+  margin-bottom: 40px; /* Reduced margin */
+  padding: 0 20px; /* Side padding */
 }
 
 .related-posts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller min width */
+  gap: 25px; /* Smaller gap */
+  padding: 0 20px; /* Side padding */
 }
 
 .related-post {
@@ -486,12 +520,12 @@
 }
 
 .related-post:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px); /* Less movement on mobile */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Reduced shadow */
 }
 
 .related-post-image {
-  height: 200px;
+  height: 180px; /* Smaller height for mobile */
   overflow: hidden;
 }
 
@@ -507,123 +541,228 @@
 }
 
 .related-post-content {
-  padding: 20px;
+  padding: 18px; /* Slightly less padding */
 }
 
 .related-post-category {
   color: var(--primary-color);
-  font-size: 0.8rem;
+  font-size: 0.75rem; /* Smaller font */
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px; /* Reduced margin */
 }
 
 .related-post-title {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Better mobile size */
   font-weight: 600;
   color: var(--text-color);
   line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
 }
 
 .related-post-date {
-  font-size: 0.85rem;
+  font-size: 0.8rem; /* Slightly smaller */
   color: var(--text-light);
 }
 
-/* Responsive Design */
+/* Enhanced Mobile Responsive Design */
 @media (max-width: 1024px) {
   .post-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px; /* Smaller gap */
   }
 
   .post-sidebar {
     position: static;
     order: -1;
+    padding: 0; /* Remove side padding */
+  }
+
+  /* Better mobile layout for sidebar widgets */
+  .sidebar-mobile-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 0 20px;
+    margin-bottom: 30px;
   }
 
   .toc-widget,
   .share-widget {
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    width: auto;
-    min-width: 250px;
+    flex-shrink: 0;
+    width: 280px;
+    margin-bottom: 0;
   }
 }
 
 @media (max-width: 768px) {
+  .breadcrumb-section {
+    padding: 90px 0 15px; /* Better mobile spacing */
+  }
+
+  .post-header {
+    padding: 25px 0; /* Reduced padding */
+  }
+
   .post-title {
-    font-size: 2.2rem;
+    font-size: 2rem; /* Better mobile size */
+    padding: 0 15px; /* Tighter side padding */
+  }
+
+  .post-excerpt {
+    font-size: 1rem;
+    padding: 0 15px; /* Tighter side padding */
   }
 
   .post-meta {
     flex-direction: column;
-    gap: 15px;
+    gap: 12px; /* Smaller gap */
+    padding: 0 15px; /* Tighter side padding */
   }
 
   .post-meta-top {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px; /* Smaller gap */
+  }
+
+  .post-content {
+    padding: 0 15px; /* Tighter side padding */
+  }
+
+  .image-container {
+    margin: 0 15px; /* Tighter side margins */
+    border-radius: 10px; /* Less rounded on mobile */
   }
 
   .nav-links {
     grid-template-columns: 1fr;
+    padding: 0 15px; /* Tighter side padding */
+  }
+
+  .related-posts h2 {
+    padding: 0 15px; /* Tighter side padding */
   }
 
   .related-posts-grid {
-    grid-template-columns: 1fr;
+    padding: 0 15px; /* Tighter side padding */
+  }
+
+  /* Stack sidebar widgets vertically on mobile */
+  .sidebar-mobile-container {
+    flex-direction: column;
+    overflow-x: visible;
+    padding: 0 15px;
   }
 
   .toc-widget,
   .share-widget {
-    display: block;
-    margin-right: 0;
     width: 100%;
   }
 }
 
 @media (max-width: 576px) {
   .breadcrumb-section {
-    padding: 100px 0 15px;
+    padding: 80px 0 10px; /* Even tighter spacing */
   }
 
   .post-header {
-    padding: 30px 0;
+    padding: 20px 0; /* Minimal padding */
+  }
+
+  .post-title {
+    font-size: 1.6rem; /* Smaller for very small screens */
+    padding: 0 10px; /* Minimal side padding */
+  }
+
+  .post-excerpt {
+    font-size: 0.95rem; /* Slightly smaller */
+    padding: 0 10px; /* Minimal side padding */
+  }
+
+  .post-content {
+    padding: 0 10px; /* Minimal side padding */
+  }
+
+  .post-content-section {
+    padding: 40px 0; /* Reduced padding */
+  }
+
+  .post-content h1 {
+    font-size: 1.8rem; /* Smaller headings */
+  }
+
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .post-content p {
+    font-size: 0.95rem; /* Slightly smaller text */
+    line-height: 1.6; /* Tighter line height */
+  }
+
+  .post-content blockquote {
+    padding: 12px 15px; /* Less padding */
+    margin: 20px 0; /* Reduced margin */
+    font-size: 0.95rem;
+  }
+
+  .nav-previous,
+  .nav-next {
+    padding: 15px; /* Less padding */
+    min-height: 70px; /* Smaller min height */
+  }
+
+  .nav-title {
+    font-size: 0.9rem; /* Smaller navigation titles */
+  }
+
+  .image-container {
+    margin: 0 10px; /* Minimal side margins */
+    max-height: 300px; /* Smaller max height */
+  }
+
+  .related-posts-grid {
+    padding: 0 10px; /* Minimal side padding */
+    gap: 20px; /* Smaller gap */
+  }
+
+  .related-posts h2 {
+    font-size: 1.8rem; /* Smaller heading */
+    padding: 0 10px; /* Minimal side padding */
+  }
+
+  .sidebar-mobile-container {
+    padding: 0 10px; /* Minimal side padding */
+  }
+
+  /* Better touch targets for very small screens */
+  .share-button {
+    padding: 14px 15px;
+    font-size: 0.85rem;
+  }
+
+  .toc-nav a {
+    padding: 12px 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape phone optimization */
+@media (max-width: 896px) and (orientation: landscape) {
+  .post-header {
+    padding: 15px 0;
   }
 
   .post-title {
     font-size: 1.8rem;
   }
 
-  .post-excerpt {
-    font-size: 1rem;
-  }
-
   .post-content-section {
-    padding: 60px 0;
-  }
-
-  .post-content h1 {
-    font-size: 2rem;
-  }
-
-  .post-content h2 {
-    font-size: 1.6rem;
-  }
-
-  .post-content h3 {
-    font-size: 1.3rem;
-  }
-
-  .post-content p {
-    font-size: 1rem;
-  }
-
-  .nav-previous,
-  .nav-next {
-    padding: 20px;
+    padding: 30px 0;
   }
 }
 
@@ -645,5 +784,10 @@
 
   .post-content {
     max-width: 100%;
+    padding: 0; /* Remove padding for print */
+  }
+
+  .post-title {
+    font-size: 2rem; /* Appropriate print size */
   }
 }
