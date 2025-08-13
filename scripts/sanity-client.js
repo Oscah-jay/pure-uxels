@@ -15,7 +15,6 @@ class SanityClient {
     const url = new URL(this.baseUrl);
     url.searchParams.set("query", query);
 
-    // Add parameters to GROQ
     Object.keys(params).forEach((key) => {
       url.searchParams.set(`$${key}`, JSON.stringify(params[key]));
     });
@@ -41,20 +40,28 @@ class SanityClient {
     }
   }
 
-  // Safely build image URL from Sanity asset reference
+  // Get image URL from either _ref or url
   imageUrl(source) {
-    if (!source?.asset?._ref) return "";
+    if (!source || !source.asset) return "";
 
-    const ref = source.asset._ref; // e.g. "image-abc123-800x600-png"
-    const parts = ref.split("-");
+    // ✅ Case 1: Already has a direct URL from GROQ
+    if (source.asset.url) {
+      return source.asset.url;
+    }
 
-    if (parts.length < 2) return "";
+    // ✅ Case 2: Has a _ref that needs parsing
+    if (source.asset._ref) {
+      const parts = source.asset._ref.split("-");
+      if (parts.length < 3) return "";
 
-    const id = parts[1];
-    const dimensions = parts.length >= 3 ? parts[2] : "";
-    const format = parts.length >= 4 ? parts[3] : "jpg";
+      const id = parts[1];
+      const dimensions = parts.length >= 3 ? parts[2] : "";
+      const format = parts.length >= 4 ? parts[3] : "jpg";
 
-    return `https://cdn.sanity.io/images/${this.projectId}/${this.dataset}/${id}${dimensions ? `-${dimensions}` : ""}.${format}`;
+      return `https://cdn.sanity.io/images/${this.projectId}/${this.dataset}/${id}${dimensions ? `-${dimensions}` : ""}.${format}`;
+    }
+
+    return "";
   }
 
   // Build optimized image URL with parameters
