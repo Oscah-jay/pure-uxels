@@ -605,7 +605,7 @@ body {
 
   .post-meta {
     flex-direction: row;
-    gap: 5px;
+    gap: 30px;
     text-align: left;
   }
   .post-header{
