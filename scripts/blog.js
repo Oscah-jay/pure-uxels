@@ -29,8 +29,7 @@ class BlogManager {
       const filterBtns = document.querySelectorAll(".filter-btn")
       filterBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-          const filterValue = e.currentTarget.dataset.filter 
-          this.handleFilterChange(filterValue)
+          this.handleFilterChange(e.target.dataset.filter)
         })
       })
   
@@ -280,23 +279,17 @@ class BlogManager {
     }
   
     handleFilterChange(filter) {
-      if (!filter) return // prevent running with undefined
-    
       this.currentFilter = filter
       this.currentPage = 1
-    
+  
+      // Update active filter button
       document.querySelectorAll(".filter-btn").forEach((btn) => {
         btn.classList.remove("active")
       })
-    
-      const activeBtn = document.querySelector(`[data-filter="${filter}"]`)
-      if (activeBtn) {
-        activeBtn.classList.add("active")
-      }
-    
+      document.querySelector(`[data-filter="${filter}"]`).classList.add("active")
+  
       this.renderPosts()
     }
-    
   
     handleSearch(searchTerm) {
       this.currentSearch = searchTerm
