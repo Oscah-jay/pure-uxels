@@ -223,9 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fetch all projects on page load
     async function fetchProjects() {
       try {
-        const response = await fetch('projects.json');
-        const data = await response.json();
-        allProjects = Object.values(data);
+       
       } catch (error) {
         console.error("Failed to load projects:", error);
       }
