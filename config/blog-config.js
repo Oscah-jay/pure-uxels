@@ -74,3 +74,11 @@ const blogConfig = {
     module.exports = blogConfig
   }
   
+  const portfolioQuery = `*[_type == "portfolio"] | order(_createdAt desc) {
+    title,
+    slug,
+    description,
+    "imageUrl": image.asset->url,
+    link
+  }`;
+  
