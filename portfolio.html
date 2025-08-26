@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure UXels - Portfolio</title>
-    <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/portfolio.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="Assets/favicons/favicon1.png" type="image/png">
     <link rel="apple-touch-icon" href="./Assets/favicons/favicon1.png">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCC7X79Y9N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZCC7X79Y9N');
+</script>
 </head>
 <body>
     <div class="cursor"></div>
@@ -19,7 +27,7 @@
     <div class="loader">
         <div class="loader-content">
             <div class="loader-title">PORTFOLIO</div>
-            <div class="loader-subtitle">OUR CREATIVE WORKS</div>
+            <div class="loader-subtitle">LOADING OUR CREATIVE WORKS</div>
             <div class="loader-progress">
                 <div class="loader-bar"></div>
             </div>
@@ -60,13 +68,13 @@
         </div>
     </header>
 
-    <!-- Portfolio Hero Section -->
+    <!-- Hero Section -->
     <section class="portfolio-hero">
         <div class="container">
             <div class="hero-content">
-                <div class="subtitle reveal-text">OUR PORTFOLIO</div>
-                <h1 class="reveal-text">Creative <span class="highlight">Works</span></h1>
-                <p class="reveal-text">Explore our collection of award-winning projects and creative solutions that drive results.</p>
+                <div>OUR PORTFOLIO</div>
+                <h1>Creative <span class="highlight">Works</span></h1>
+                <p>Explore our collection of award-winning projects and creative solutions.</p>
             </div>
         </div>
         <div class="hero-background">
@@ -80,12 +88,12 @@
     <section class="portfolio-filter">
         <div class="container">
             <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web-design">Web Design</button>
-                <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
+                <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="branding">Branding</button>
-                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                <button class="filter-btn" data-filter="graphics">Graphics</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+                <button class="filter-btn" data-filter="motion">Motion</button>
+                <button class="filter-btn" data-filter="print">Print</button>
             </div>
             <div class="view-toggle">
                 <button class="view-btn active" data-view="grid">
@@ -101,40 +109,185 @@
     <!-- Portfolio Grid -->
     <section class="portfolio-grid">
         <div class="container">
-            <div class="projects-container grid-view" id="projects-container">
-                <!-- Projects will be loaded dynamically from Sanity -->
-                <div class="loading-state">
-                    <div class="loading-spinner">
-                        <i class="fas fa-spinner fa-spin"></i>
+            <div class="projects-container grid-view">
+                <!-- Project 1 -->
+                <div class="project-item" data-category="graphic">
+                    <div class="project-image">
+                        <img src="./Assets/previews/give to live.png" alt="give to live poster">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic Design</div>
+                            <div class="project-title">Give to Live poster</div>
+                    
+                        </div>
                     </div>
-                    <p>Loading amazing projects...</p>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-item" data-category="graphic">
+                    <div class="project-image">
+                        <img src="Assets/previews/All Out Arena,Ruiru (1).png" alt="football friendly">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic Design</div>
+                            <div class="project-title">Friendly Football Match</div>
+            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-item" data-category="branding">
+                    <div class="project-image">
+                        <img src="Assets/previews/1.png" alt="food template">
+                        <div class="project-overlay">
+                            <div class="project-category">Branding Template</div>
+                            <div class="project-title">Food Advertisement Template</div>
+            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-item" data-category="graphics">
+                    <div class="project-image">
+                         <img src="Assets/previews/Skip the Trip We’ll Handle It.png" alt="Food poster" srcset="">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic Design</div>
+                            <div class="project-title">Restaurant Food services</div>
+        
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-item" data-category="Graphic">
+                    <div class="project-image">
+                        <img src="Assets/previews/Blu Nova Tech.png" alt="poster">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic design</div>
+                            <div class="project-title">Father's Day Poster</div>
+                
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-item" data-category="Graphic">
+                    <div class="project-image">
+                        <img src="Assets/previews/g collection (3).png" alt="poster">
+                        <div class="project-overlay">
+                            <div class="project-category">Branding Design</div>
+                            <div class="project-title">Fashion collection Discount</div>
+                    
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="project-item" data-category="web">
+                    <div class="project-image">
+                        <img src="Assets/previews/church1.png" alt="church website">
+                        <div class="project-overlay">
+                            <div class="project-category">Web Design</div>
+                            <div class="project-title">Church Website</div>
+                
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 8 -->
+                <div class="project-item" data-category="ui">
+                    <div class="project-image">
+                        <img src="Assets/previews/witz2.png" alt="Dashboard UI">
+                        <div class="project-overlay">
+                            <div class="project-category">UI/UX Design</div>
+                            <div class="project-title">Customer Dashboard UI</div>
+                    
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 9 -->
+                <div class="project-item" data-category="graphic">
+                    <div class="project-image">
+                        <img src="Assets/previews/Lost .png" alt="car accessories" srcset="">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic Design</div>
+                            <div class="project-title">Car Accessories</div>
+                
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 10 -->
+                <div class="project-item" data-category="graphic">
+                    <div class="project-image">
+                        <img src="Assets/previews/prod.png" alt="product Design">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic design</div>
+                            <div class="project-title">Product Design</div>
+    
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 11 -->
+                <div class="project-item" data-category="graphic">
+                    <div class="project-image">
+                        <img src="Assets/previews/eco pots (1).png" alt="pots">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic Design</div>
+                            <div class="project-title">Flower Pots</div>
+                
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 12 -->
+                <div class="project-item" data-category="graphic">
+                    <div class="project-image">
+                        <img src="Assets/previews/Order Now.png" alt="Restaurant Website">
+                        <div class="project-overlay">
+                            <div class="project-category">Graphic Design</div>
+                            <div class="project-title">Restaurant</div>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
             
+            <div id="projectsContainer"></div>
             <div class="load-more-container">
-                <button class="load-more-btn" id="load-more-btn">
-                    <span>Load More Projects</span>
-                    <i class="fas fa-spinner" style="display: none;"></i>
+                <button class="load-more-btn">
+                  <span>Load More</span>
+                  <i class="fas fa-spinner" style="display: none;"></i>
                 </button>
-            </div>
+              </div>
+              <div id="projectsOverlay">
+                <div id="overlayHeader">
+                  <h2>All Projects</h2>
+                  <button id="overlayClose">&times;</button>
+                </div>
+                <div id="overlayGrid"></div>
+              </div>
+              
         </div>
     </section>
 
     <!-- Project Modal -->
-    <div class="project-modal" id="project-modal">
+    <div class="project-modal">
         <div class="modal-overlay"></div>
         <div class="modal-container">
             <button class="modal-close">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="modal-content" id="modal-content">
-                <!-- Project details will be loaded dynamically -->
+            <div class="modal-content">
+                <!-- Content will be loaded dynamically -->
             </div>
             <div class="modal-navigation">
-                <button class="modal-prev" id="modal-prev">
+                <button class="modal-prev">
                     <i class="fas fa-arrow-left"></i>
                 </button>
-                <button class="modal-next" id="modal-next">
+                <button class="modal-next">
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -145,9 +298,9 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="reveal-text">Ready to start your project?</h2>
-                <p class="reveal-text">Let's create something amazing together.</p>
-                <a href="./contact.html" class="btn primary reveal">Get in Touch</a>
+                <h2>Ready to start your project?</h2>
+                <p>Let's create something amazing together.</p>
+                <a href="./contact.html" class="btn primary">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -165,9 +318,8 @@
                         <ul>
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./services.html">Services</a></li>
-                            <li><a href="./About.html">About</a></li>
+                            <li><a href="./about.html">About</a></li>
                             <li><a href="#">Portfolio</a></li>
-                            <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
                         </ul>
                     </div>
@@ -203,45 +355,6 @@
         </div>
     </footer>
 
-    <!-- Let's Talk Button -->
-    <button id="lets-talk-btn" class="lets-talk-btn">MENU</button>
-
-    <!-- Overlay Menu -->
-    <div id="overlay-menu" class="overlay-menu">
-        <div class="overlay-header">
-            <span class="menu-label">MENU</span>
-            <div class="header-right">
-                <span class="lets-talk-label">LET'S TALK</span>
-                <button id="close-overlay" class="close-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        
-        <div class="overlay-content">
-            <div class="nav-links">
-                <a href="#" class="nav-link">Work</a>
-                <a href="./services.html" class="nav-link">Services</a>
-                <a href="./About.html" class="nav-link">About</a>
-                <a href="./blog.html" class="nav-link">Blog</a>
-                <a href="./contact.html" class="nav-link">Contact</a>
-            </div>
-            
-            <div class="contact-info">
-                <a href="mailto:studio@pureuxels.com" class="contact-link">studio@pureuxels.com</a>
-                <a href="tel:+254798785974" class="contact-link phone">(+254) 798785974</a>
-                <div class="address">
-                    <p>Nairobi</p>
-                    <p>Kenya</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="./scripts/main.js"></script>
     <script src="./scripts/portfolio.js"></script>
 </body>
 </html>
