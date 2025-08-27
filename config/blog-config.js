@@ -6,7 +6,7 @@ const blogConfig = {
     sanity: {
       projectId: "j5s1dfn3", 
       dataset: "production", 
-      apiVersion: "2025-08-12",
+      apiVersion: "2025-08-26",
       useCdn: true, // Set to false for development
     },
   
@@ -22,7 +22,7 @@ const blogConfig = {
     // SEO Settings
     seo: {
       siteName: "Pure UXels",
-      siteUrl: "https://pureuxels.com", // Replace with your website URL
+      siteUrl: "https://pureuxels.com", 
       defaultImage: "/Assets/og-image.jpg", // Default social sharing image
       twitterHandle: "@PureUxels",
     },
