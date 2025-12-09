@@ -243,88 +243,224 @@
         </div>
     </section>
 
-    
-
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="reveal-text">Featured <span class="highlight">Work</span></h2>
-                <p class="reveal-text">A showcase of our finest work and creative achievements</p>
-            </div>
-            <div class="filter-buttons reveal">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
-                <button class="filter-btn" data-filter="ui">UI/UX</button>
-                <button class="filter-btn" data-filter="video">Video</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item reveal" data-category="graphic">
-                    <div class="portfolio-img">
-                        <img src="Assets/previews/give to live.png" alt="Graphic Design Project">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>NPO Outreach</h3>
-                        <p>Graphic Design</p>
-                        <a href="./portfolio.html" class="portfolio-link"><i class="fas fa-plus"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal" data-category="ui">
-                    <div class="portfolio-img">
-                        <img src="Assets/previews/witz2.png" alt="UI/UX Design Project">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Web App Design</h3>
-                        <p>UI/UX Design</p>
-                        <a href="./portfolio.html" class="portfolio-link"><i class="fas fa-plus"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal" data-category="branding">
-                    <div class="portfolio-img">
-                        <img src="Assets/previews/g collection (3).png" alt="fashion">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Graphic Design</h3>
-                        <p>Brand Promotional Design</p>
-                        <a href="./portfolio.html" class="portfolio-link"><i class="fas fa-plus"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal" data-category="graphic">
-                    <div class="portfolio-img">
-                        <img src="Assets/previews/Skip the Trip We’ll Handle It.png" alt="Graphic Design Project">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Graphic Design</h3>
-                        <p>Food services</p>
-                        <a href="./portfolio.html" class="portfolio-link"><i class="fas fa-plus"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal" data-category="ui">
-                    <div class="portfolio-img">
-                        <img src="Assets/previews/church1.png" alt="UI/UX Design Project">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Website Redesign</h3>
-                        <p>UI/UX Design</p>
-                        <a href="./portfolio.html" class="portfolio-link"><i class="fas fa-plus"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal" data-category="graphics">
-                    <div class="portfolio-img">
-                        <img src="Assets/previews/prod.png" alt="product">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Graphic Design</h3>
-                        <p>Product Advertisement</p>
-                        <a href="./portfolio.html" class="portfolio-link"><i class="fas fa-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="reveal">
-                <a href="./portfolio.html" class="btn primary center">View All Projects</a>
-            </div>
+    <section class="willowwood-section">
+        <div class="section-header">
+            <h2 class="reveal-text">Featured <span class="highlight">Work</span></h2>
+            <p class="reveal-text">A showcase of our finest work and creative achievements</p>
         </div>
-    </section>
 
+        <div class="content-wrapper">
+      
+          <!-- LEFT: image slider with multiple img elements (square) -->
+          <div class="image-slider" aria-label="project images">
+            <img src="Assets/All Out Arena,Ruiru (1).png" alt="slide 1" class="slide active">
+            <img src="Assets/previews/Blu Nova Tech.png" alt="slide 2" class="slide">
+            <img src="Assets/All Out Arena,Ruiru (1).png" alt="slide 3" class="slide">
+            <img src="Assets/previews/Blu Nova Tech.png" alt="slide 4" class="slide">
+          </div>
+      
+          <!-- RIGHT: marquee, text, nav -->
+          <div class="right-side">
+      
+            <!-- Half-width marquee (starts where image ends) -->
+            <div class="half-strip" aria-hidden="true">
+              <div class="marquee">
+                <span>
+                  Collaborative Process • M/WBE-Certified • Creative Strategy • Branding • Motion Graphics • Web Design •
+                  Collaborative Process • M/WBE-Certified • Creative Strategy • Branding • Motion Graphics • Web Design •
+                </span>
+              </div>
+            </div>
+      
+            <div class="text-area">
+              <!-- Clickable title (links to case study) -->
+              <a id="projectLink" target="_blank" rel="noopener noreferrer">
+                <h1 id="projectTitle" class="brand">WILLOWWOOD</h1>
+              </a>
+      
+              <a id="projectDescLink" target="_blank" rel="noopener noreferrer">
+                <p id="projectDesc" class="project-desc">Branding / Brand Collateral / 3D Design / Motion Graphics / Web Design</p>
+              </a>
+      
+              <div class="nav-controls">
+                <button id="prevBtn" class="nav-btn" aria-label="previous slide">&#8249;</button>
+                <span id="counter">01 / 04</span>
+                <button id="nextBtn" class="nav-btn" aria-label="next slide">&#8250;</button>
+              </div>
+            </div>
+          </div>
+          <button id="newProjectBtn" class="new-project">New Project?</button>
+      
+        </div>
+      
+        <button id="newProjectBtn" class="new-project">New Project?</button>
+      </section>
+      <script>
+        /* ---------- Project data (title, desc, link) ----------
+           Replace with your real data / links
+        */
+        const projectData = [
+          {
+            title: "WillowWood",
+            desc: "Branding / 3D Design / Motion Graphics / Web Design",
+            link: "https://example.com/case-study-1"
+          },
+          {
+            title: "NeuroFlex System",
+            desc: "Medical UX / Robotics UI / Vision System Software",
+            link: "https://example.com/case-study-2"
+          },
+          {
+            title: "OrthoMotion Lab",
+            desc: "Clinical Product Branding / Website / CAD Renders",
+            link: "https://example.com/case-study-3"
+          },
+          {
+            title: "HumanFit Prosthetics",
+            desc: "Product Design / Medical Graphics / Digital Suite",
+            link: "https://example.com/case-study-4"
+          }
+        ];
+        
+        /* ---------- DOM refs and state ---------- */
+        const slides = Array.from(document.querySelectorAll('.image-slider .slide'));
+        const total = slides.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counterEl = document.getElementById('counter');
+        const titleEl = document.getElementById('projectTitle');
+        const descEl = document.getElementById('projectDesc');
+        const linkEl = document.getElementById('projectLink');
+        const descLinkEl = document.getElementById('projectDescLink');
+        const newProjectBtn = document.getElementById('newProjectBtn');
+        
+        let index = 0;
+        let autoId = null;
+        const INTERVAL_MS = 4000;
+        
+        /* ---------- Helper: set counter & text ---------- */
+        function syncTextAndCounter(idx){
+          const d = projectData[idx] || { title: '', desc: '', link: '#' };
+          titleEl.textContent = d.title;
+          descEl.textContent = d.desc;
+          linkEl.href = d.link;
+          descLinkEl.href = d.link;
+          counterEl.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+        }
+        
+        /* ---------- Core: updateSlide (keeps same name) ----------
+           Performs flip-out on current active slide, then flip-in on next slide,
+           updates text/link/counter in sync.
+        */
+        function updateSlide(targetIndex = (index + 1) % total) {
+          // normalize
+          targetIndex = ((targetIndex % total) + total) % total;
+          if (targetIndex === index) return; // nothing to do
+        
+          const fromEl = slides[index];
+          const toEl = slides[targetIndex];
+        
+          // prepare toEl: ensure it's behind and visible for animation start
+          toEl.classList.remove('active', 'flip-in', 'flip-out');
+          toEl.style.opacity = 0;
+          toEl.style.zIndex = 1;
+        
+          // add flip-out to current
+          fromEl.classList.remove('flip-in');
+          fromEl.classList.add('flip-out');
+        
+          // when flip-out ends -> swap active and flip-in the new one
+          const onFromAnimEnd = function (e) {
+            // ensure we only react to the flip animation (not other transitions)
+            fromEl.removeEventListener('animationend', onFromAnimEnd);
+        
+            // remove active/flip-out from fromEl
+            fromEl.classList.remove('active', 'flip-out');
+            fromEl.style.opacity = 0;
+            fromEl.style.zIndex = 1;
+        
+            // set new index
+            index = targetIndex;
+        
+            // set text & counter instantly when the image change happens
+            syncTextAndCounter(index);
+        
+            // make toEl active and flip-in
+            toEl.classList.add('active'); // will set opacity:1 via .active
+            toEl.classList.add('flip-in');
+            toEl.style.zIndex = 4;
+        
+            // cleanup after flip-in finishes
+            const onToAnimEnd = function () {
+              toEl.removeEventListener('animationend', onToAnimEnd);
+              toEl.classList.remove('flip-in');
+              toEl.style.zIndex = 2;
+              // ensure opacity stays 1
+              toEl.style.opacity = 1;
+            };
+            toEl.addEventListener('animationend', onToAnimEnd);
+          };
+        
+          fromEl.addEventListener('animationend', onFromAnimEnd);
+        }
+        
+        /* ---------- Auto loop controls ---------- */
+        function startAuto(){
+          stopAuto();
+          autoId = setInterval(() => updateSlide(), INTERVAL_MS);
+        }
+        function stopAuto(){
+          if (autoId) {
+            clearInterval(autoId);
+            autoId = null;
+          }
+        }
+        
+        /* ---------- Prev/Next handlers ---------- */
+        nextBtn.addEventListener('click', () => {
+          updateSlide((index + 1) % total);
+          startAuto();
+        });
+        prevBtn.addEventListener('click', () => {
+          updateSlide((index - 1 + total) % total);
+          startAuto();
+        });
+        
+        /* ---------- Pause on hover (optional UX) ---------- */
+        const sliderEl = document.querySelector('.image-slider');
+        sliderEl.addEventListener('mouseenter', stopAuto);
+        sliderEl.addEventListener('mouseleave', startAuto);
+        
+        /* ---------- New Project button placeholder ---------- */
+        newProjectBtn.addEventListener('click', () => {
+          // replace with a link, modal open, etc.
+          alert('New Project? clicked.');
+        });
+        
+        /* ---------- Initialize ---------- */
+        (function init() {
+          // ensure only the first slide has active class on load
+          slides.forEach((s, i) => {
+            s.classList.toggle('active', i === 0);
+            s.classList.remove('flip-in', 'flip-out');
+            s.style.zIndex = i === 0 ? 2 : 1;
+          });
+          syncTextAndCounter(0);
+          startAuto();
+        
+          // keep marquee duration responsive
+          const span = document.querySelector('.marquee span');
+          function recomputeDuration(){
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const textLength = span.textContent.length;
+            const base = Math.max(10, Math.round((textLength * 0.25) + (vw * 0.008)));
+            span.style.animationDuration = base + 's';
+          }
+          window.addEventListener('resize', recomputeDuration);
+          recomputeDuration();
+        })();
+        </script>
+      
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">

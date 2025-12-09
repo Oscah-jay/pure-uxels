@@ -2696,4 +2696,246 @@ blockquote {
       font-size: 1.2rem;
     }
   }
+
+
+  :root{
+    --gap: 40px;
+    --max-width: 1200px;
+    --accent: #000;
+    --muted: #666;
+  }
+  
+  /* SECTION */
+  .willowwood-section{
+    margin-top: -140px;
+    position: relative;
+    width: 100%;
+    background: #fff;
+    overflow: visible;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  
+  /* MAIN LAYOUT */
+  .content-wrapper{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    padding: 80px 24px;
+    box-sizing: border-box;
+  }
+  
+  /* IMAGE SLIDER (square) */
+  .image-slider{
+    width: 48%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    min-width: 160px;
+    max-width: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #eee;
+  }
+  
+  .image-slider .slide{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transition: opacity 0.35s ease;
+    backface-visibility: hidden;
+    z-index: 1;
+  }
+  
+  .image-slider .slide.active{
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  /* RIGHT SIDE */
+  .right-side{
+    width: 48%;
+    position: relative;
+  }
+  
+  /* HALF STRIP MARQUEE (only within right-side width) */
+  .half-strip{
+    width: 130%;
+    background: #1e3a8a;
+    overflow: hidden;
+    padding: 10px 0;
+    margin-bottom: 26px;
+    margin-top: 150px;
+  }
+  
+  .marquee{
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .marquee span{
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 1.5rem;
+    animation: marqueeScroll 8s linear infinite;
+  }
+  @keyframes marqueeScroll{
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  /* TEXT */
+  .tagline{
+    margin: 0 0 8px 0;
+    color: #ff6584;
+    font-size: 20px;
+  }
+  
+  .text-area a{
+    text-decoration: none;
+  }
+  .brand{
+    margin-top: 170px;
+    font-size: clamp(12px, 3vw, 12px);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #1e3a8a;
+  }
+  .project-desc{
+    margin: 12px 0 20px 0;
+    font-size: 11px;
+    color: #111;
+  }
+  
+  /* nav */
+  .nav-controls{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin-top: -20px;
+  }
+  .nav-btn{
+    background: none;
+    border: none;
+    font-size: 34px;
+    cursor: pointer;
+    padding: 3px 5px;
+    color: #1e3a8a;
+  }
+  #counter{
+    font-size: 14px;
+    color: var(--muted);
+  }
+  
+  /* NEW PROJECT */
+  .new-project{
+    position: absolute;
+    right: 28px;
+    bottom: 160px;
+    background: #1e3a8a;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 28px;
+    cursor: pointer;
+    z-index: 60;
+  }
+  
+  /* FLIP ANIMATIONS */
+  /* Flip Out Y */
+  @keyframes flipOutY {
+    0% {
+      transform: perspective(900px) rotateY(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: perspective(900px) rotateY(90deg) translateZ(0);
+      opacity: 0;
+    }
+  }
+  .flip-out {
+    animation: flipOutY 0.45s ease forwards;
+    z-index: 3 !important;
+  }
+  
+  /* Flip In Y */
+  @keyframes flipInY {
+    0% {
+      transform: perspective(900px) rotateY(-90deg) translateZ(0);
+      opacity: 0;
+    }
+    100% {
+      transform: perspective(900px) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+  .flip-in {
+    animation: flipInY 0.45s ease forwards;
+    z-index: 4 !important;
+  }
+  
+  /* small scale subtle boost when visible */
+  .image-slider .slide.flip-in {
+    will-change: transform, opacity;
+  }
+  
+  /* responsive */
+  @media (max-width: 900px){
+    .content-wrapper{
+      flex-direction: column;
+      text-align: center;
+      padding: 48px 20px 80px;
+    }
+    .image-slider, .right-side{ width: 100%; }
+    .nav-controls{ justify-content: center; margin-top: 8px; }
+    .new-project{ right: 18px; bottom: 18px; padding: 10px 14px; }
+
+    .half-strip{
+        width: 100%;
+        background: #1e3a8a;
+        overflow: hidden;
+        padding: 10px 0;
+        margin-bottom: 26px;
+        margin-top: -500px;
+      }
+      
+      .marquee{
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .brand{
+        margin-top: 450px;
+        font-size: clamp(12px, 3vw, 12px);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: #1e3a8a;
+      }
+
+      .new-project{
+        position: absolute;
+        right: 140px;
+        bottom: 90px;
+        background: #1e3a8a;
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 28px;
+        cursor: pointer;
+        z-index: 60;
+      }
+  
+  }
+
+  @media (max-width: 400px){
+    .tagline{ font-size: 18px; }
+    .brand{ font-size: clamp(10px, 4vw, 10px); }
+    .project-desc{ font-size: 10px; }
+  }
   
