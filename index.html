@@ -206,49 +206,7 @@
     </div>
 </section>
 
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="reveal-text">Our <span class="highlight">Services</span></h2>
-                <p class="reveal-text">We specialize in bringing creative visions to reality</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Graphic Design</h3>
-                    <p>Compelling visual content that communicates your message and strengthens your brand identity.</p>
-                    <a href="./services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card reveal">
-                    <div class="icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>User-centered interfaces that enhance engagement and provide seamless experiences.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card reveal">
-                    <div class="icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Video Editing</h3>
-                    <p>Professional video content that captures attention and conveys your story effectively.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card reveal">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Digital Illustration</h3>
-                    <p>Custom artwork and illustrations that bring your concepts to life with creativity.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <section class="willowwood-section">
         <div class="section-header">
             <h2 class="reveal-text">Featured <span class="highlight">Work</span></h2>
@@ -467,50 +425,55 @@
         })();
         </script>
       
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="reveal-text">About <span class="highlight">Us</span></h2>
-                <p class="reveal-text">Our Team is dedicated towards delivering stunning visual content to your satisfaction</p>
+      <section class="about-section">
+        <div class="about-container">
+    
+            <!-- LEFT SIDE — Bold Text -->
+            <div class="about-left reveal-left">
+                <h2>
+                    WE HELP BRANDS GROW THROUGH 
+                    CREATIVE DESIGN.
+                    STRATEGY. AND MODERN EXPERIENCES.
+                </h2>
+    
+                <!-- Your Logo instead of the icon -->
+                <div class="about-logo">
+                    <img src="Assets/icons/logo-nobg.png" alt="Brand Logo">
+                </div>
             </div>
-            <div class="about-content">
-                <div class="about-image reveal">
-                    <img src="./Assets/team.jpg" alt="Our Team">
-                </div>
-                <div class="about-text reveal">
-                    <h3>We Create Digital Experiences That Matter</h3>
-                    <p>Pure-UXels has been at the forefront of digital design, creating impactful visual content for 
-                        clients Countrywide. Our team of passionate designers and visual storytellers is dedicated 
-                        to transforming ideas into compelling digital experiences.</p>
-                    <p>We believe in the power of design to communicate, inspire, and drive results. Every 
-                        project is an opportunity to showcase creativity and technical expertise while delivering 
-                        solutions that exceed expectations.
-                    </p>
-                    <div class="about-stats">
-                        <div class="about-stat">
-                            <h4>7+</h4>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="about-stat">
-                            <h4>75+</h4>
-                            <p>Clients Countrywide</p>
-                        </div>
-                        <div class="about-stat">
-                            <h4>150+</h4>
-                            <p>Projects Completed</p>
-                        </div>
-                    </div>
-
-                    <!-- Uncomment this once you get a team
-
-                        <a href="./About.html" class="btn primary">Meet Our Team</a>
-                    
-                    -->
-                    
-                </div>
+    
+            <!-- RIGHT SIDE — Description -->
+            <div class="about-right reveal-right">
+                <p>
+                    At Pure Uxels, we turn ideas into visual stories that connect with people. 
+                    We help brands uncover their purpose and express it boldly through design, 
+                    strategy, and rich digital experiences. Our work blends creativity and 
+                    functionality to make brands stand out and stay meaningful.
+                </p>
+    
+                <a href="./about.html" class="about-btn">Learn More About Us</a>
             </div>
         </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal-left, .reveal-right");
+        
+            function revealOnScroll() {
+                reveals.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 80) {
+                        el.classList.add("active");
+                    }
+                });
+            }
+        
+            revealOnScroll();
+            window.addEventListener("scroll", revealOnScroll);
+        });
+        </script>
+        
+    
 
     <!-- Testimonials Section -->
 <section class="testimonials-section">

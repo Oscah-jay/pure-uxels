@@ -10,6 +10,7 @@
     --border-color: #eee;
     --shadow: 0 10px 30px rgba(0,0,0,0.05);
     --transition: all 0.3s ease;
+    --font-heading: 'Winner Sans Condensed', Arial, sans-serif;
 }
 
 .dark-mode {
@@ -24,6 +25,13 @@
     --shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+@font-face {
+    font-family: 'Winner Sans Condensed';
+    src: url('Assets/fonts/WinnerSans-CondBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
 
 * {
     margin: 0;
@@ -58,6 +66,7 @@ section {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.3;
+    font-family: var(--font-heading);
 }
 
 a {
@@ -641,57 +650,164 @@ nav {
     color: white;
 }
 
-/* About Section */
-.about-content {
+.about-section {
+    padding: 140px 8%;
+    background-color: #E3D4C9; /* adjust for your theme */
+    overflow: hidden;
+}
+
+/* Layout */
+.about-container {
     display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 70px;
 }
 
-.about-image {
-    flex: 1;
-    min-width: 300px;
-}
 
-.about-image img {
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.about-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.about-text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.about-text p {
-    color: var(--text-light);
-    margin-bottom: 20px;
-}
-
-.about-stats {
+/* Bold Left Text */
+.about-left h2 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    width: 900px;
+    text-transform: uppercase;
     display: flex;
-    margin: 30px 0;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
-.about-stat {
-    margin-right: 40px;
+/* Inline image in the text */
+.inline-img-wrap {
+    position: relative;
+    width: 55px;       
+    height: 55px;
+    display: inline-flex;
 }
 
-.about-stat h4 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
+.inline-img-wrap img{
+    width: 60px;
+    aspect-ratio: 1;
 }
 
-.about-stat p {
-    margin-bottom: 0;
+.inline-img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);   /* pick your background color */
+    border-radius: 4px;     /* remove if you want sharp corners */
+    transform: rotate(3deg); /* subtle background angle */
+    z-index: 1;
 }
+
+.inline-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: auto;
+    transform: translate(-50%, -50%) rotate(-7deg); 
+    z-index: 2;
+}
+/* Logo block */
+.about-logo {
+    margin-top: -10px;
+    width: 400px;
+    height: 400px;
+}
+
+.about-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Right Section Paragraph */
+.about-right {
+    max-width: 480px;
+}
+
+.about-right p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 30px;
+    margin-top: 350px;
+    width: 500px;
+    margin-left: -350px;
+}
+
+/* Button */
+.about-btn {
+    margin-left: -350px;
+    display: inline-block;
+    padding: 14px 34px;
+    border: 2px solid #E57564;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #E57564;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.about-btn:hover {
+    background-color: #E57564;
+    color: #fff;
+}
+
+/* Reveal Animations */
+.reveal-left, .reveal-right {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.reveal-left.active, .reveal-right.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .about-right p {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        margin-bottom: 30px;
+        margin-top: -70px;
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .about-left h2 {
+        font-size: 2.4rem;
+        font-weight: 900;
+        line-height: 1.1;
+        width: 350px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .about-btn {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-logo {
+        width: 150px;
+        height: 150px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 80px;
+    }
+}
+
 
 /* Testimonials Section */
 .testimonials {
