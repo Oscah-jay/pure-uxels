@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <header>
+    <header class="invisible">
         <div class="container">
             <div class="logo">
                 <span>Pure-UXels</span>
@@ -59,35 +59,41 @@
         </div>
     </header>
 
+    <script>
+        const header = document.querySelector("header");
+    
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 5) {
+                header.classList.remove("invisible");
+                header.classList.add("sticky");
+            } else {
+                header.classList.add("invisible");
+                header.classList.remove("sticky");
+            }
+        });
+    </script>
+    
+
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="reveal-text">Crafting <span class="highlight">Experiences</span> Pixel by Pixel</h1>
-                <p class="reveal-text">We create stunning digital experiences through graphic design, UI/UX, and video editing</p>
-                <div class="hero-buttons reveal">
-                    <a href="./portfolio.html" class="btn primary">View Our Work</a>
-                    <a href="./contact.html" class="btn secondary">Get in Touch</a>
-                </div>
-            </div>
-            <div class="hero-image reveal">
-                <div class="shape"></div>
-                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Digital Art Illustration">
-            </div>
-        </div>
+        <video class="hero-video" autoplay loop muted playsinline>
+            <!-- Mobile video -->
+            <source src="Assets/hero/phone-hero.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source src="Assets/hero/phone-hero.webm" type="video/webm" media="(max-width: 768px)">
+    
+            <!-- Desktop video -->
+            <source src="Assets/hero/laptop-hero.mp4" type="video/mp4" media="(min-width: 769px)">
+            <source src="Assets/hero/laptop-hero.webm" type="video/webm" media="(min-width: 769px)">
+    
+            Your browser does not support the video tag.
+        </video>
+    
         <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
+            <div class="mouse"><div class="wheel"></div></div>
             <div class="arrow">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </section>
-  
-  
-
 
         <!-- Let's Talk Button -->
 
