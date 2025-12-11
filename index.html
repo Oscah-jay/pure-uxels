@@ -22,6 +22,393 @@
 
 </head>
 <body>
+
+    <style>
+        .pux-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    padding: 14px 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-decoration: none;
+}
+
+.nav-container {
+    width: 92%;
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+.nav-left a{
+  text-decoration: none;
+}
+
+/* DESKTOP LINKS */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+    transition: .2s;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* RIGHT BUTTONS ON DESKTOP */
+.desktop-only {
+    display: inline-block;
+}
+
+/* DESKTOP RIGHT BUTTONS — PERFECTED */
+.btn {
+    padding: 8px 22px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: 0.25s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Ghost Outline Button (Schedule Meeting) */
+.btn.ghost {
+    border: 1px solid rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(2px);
+}
+
+.btn.ghost:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-1px);
+}
+
+/* Primary Filled Button (Contact Us) */
+.btn.primary {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+.btn.primary:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+/* Keep these visible only on desktop */
+.desktop-only {
+    display: inline-flex;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* MOBILE MENU BUTTON */
+.mobile-menu-btn {
+    display: none; /* hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 3000;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transition: .4s ease;
+}
+
+/* X ANIMATION */
+.mobile-menu-btn.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+.mobile-menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-btn.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* MOBILE NAV PANEL */
+.mobile-menu {
+    position: fixed;
+    top: 55px;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 70px);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255,255,255,0.2);
+
+    transition: .4s ease;
+    z-index: 2500;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* BUTTONS FOR MOBILE MENU */
+.mobile-ghost {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+.mobile-primary {
+  background-color: #1e3a8a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+
+/* RESPONSIVE RULES */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
+
+    /* HERO SECTION */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background: url('Assets/hero/laptop\ hero.png') no-repeat center/cover;
+}
+
+/* Mobile background image */
+@media (max-width: 768px) {
+    .hero-section {
+        background: url('Assets/hero/phone\ hero.png') no-repeat center/cover;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* TESTIMONIAL BOX */
+.testimonial-box {
+    color: white;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    width: 90%;
+    max-width: 280px;
+    min-height: 160px;  /* you can adjust this */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+/* Person's Image */
+.test-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    filter: grayscale(100%);
+}
+
+/* Testimonial content */
+.test-tag {
+    display: inline-block;
+    background: #7a37ff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.test-text {
+    margin: 6px 0 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.test-person p {
+    font-weight: 600;
+    margin: 0;
+}
+
+.test-person small {
+    opacity: .8;
+    text-align: center;
+}
+
+/* CTA BOX */
+.cta-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.cta-btn.primary {
+    background: #ffffff;
+    color: #000;
+}
+
+.cta-btn.secondary {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.cta-btn:hover {
+    opacity: 0.8;
+}
+
+/* ORB */
+.scroll-orb {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+
+.orb {
+    width: 16px;
+    height: 16px;
+    margin: 0 auto 4px;
+    border-radius: 50%;
+    animation: pulse 1.6s infinite;
+    background: rgba(255,255,255,0.8);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+    .hero-overlay {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px;
+        gap: 25px;
+        text-align: center;
+    }
+
+    /* Testimonial Centering */
+    .testimonial-box {
+        width: 90%;
+        max-width: 280px;
+        min-height: 160px;  /* you can adjust this */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+    }
+
+    .test-text {
+        max-width: 90%;
+    }
+    .test-img {
+        margin: 0 auto 10px;
+    }
+
+    .test-person p,
+    .test-person small {
+        text-align: center;
+    }
+
+    /* CTA Buttons Centered */
+    .cta-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-direction: row;
+        margin-bottom: -20px;
+        
+    }
+
+    .cta-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    /* Scroll Orb centered already — adjust spacing if needed */
+    .scroll-orb {
+        position: static;
+        margin-bottom: 10px;
+    }
+}
+    </style>
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
@@ -32,70 +419,134 @@
         </div>
     </div>
 
-    <header class="invisible">
-        <div class="container">
-            <div class="logo">
-                <span>Pure-UXels</span>
+    <header class="pux-nav">
+        <div class="nav-container">
+    
+            <div class="nav-left">
+                <a href="#" class="nav-logo">Pure-Uxels</a>
             </div>
-            <nav>
-                <ul class="nav-links1">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="./services.html">Services</a></li>
-                    <li><a href="./portfolio.html">Portfolio</a></li>
-                    <li><a href="./About.html">About</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-                <button class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+    
+            <!-- DESKTOP NAV -->
+            <nav class="nav-links">
+                <a href="portfolio.html">Works</a>
+                <a href="services.html">Services</a>
+                <a href="About.html">About US</a>
+                <a href="blog.html">Blog</a>
             </nav>
+    
+            <div class="nav-right">
+                <a href="https://calendly.com/pure-uxels" class="btn ghost desktop-only">Schedule A Call</a>
+                <a href="contact.html" class="btn primary desktop-only">Contact Us</a>
+    
+                <!-- MOBILE MENU BUTTON -->
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+    
+        </div>
+    
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="portfolio.html">Works</a>
+            <a href="services.html">Services</a>
+            <a href="About.html">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="https://calendly.com/pure-uxels" class="btn mobile-ghost">Schedule Meeting</a>
+            <a href="contact.html" class="btn mobile-primary">Contact Us</a>
         </div>
     </header>
-
-    <script>
-        const header = document.querySelector("header");
     
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 5) {
-                header.classList.remove("invisible");
-                header.classList.add("sticky");
-            } else {
-                header.classList.add("invisible");
-                header.classList.remove("sticky");
-            }
-        });
-    </script>
     
-
-    <section id="home" class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
-            <!-- Mobile video -->
-            <source src="Assets/hero/phone-hero.mp4" type="video/mp4" media="(max-width: 768px)">
-            <source src="Assets/hero/phone-hero.webm" type="video/webm" media="(max-width: 768px)">
+      <section class="hero-section">
+        <div class="hero-overlay">
     
-            <!-- Desktop video -->
-            <source src="Assets/hero/laptop-hero.mp4" type="video/mp4" media="(min-width: 769px)">
-            <source src="Assets/hero/laptop-hero.webm" type="video/webm" media="(min-width: 769px)">
+           <div class="cta-box">
+            <a href="./portfolio.html" class="cta-btn primary">See Work</a>
+            <a href="./contact.html" class="cta-btn secondary">Hire Us</a>
+        </div>
     
-            Your browser does not support the video tag.
-        </video>
+            <!-- BOTTOM LEFT – Testimonials -->
+            <div class="testimonial-box" id="testimonialBox">
+                <img id="testImg" class="test-img" src="Assets/ossy.png" alt="">
+                
+                <div class="testimonial-content">
+                    <span class="test-tag" id="testTag">Perfecto!</span>
+                    <p class="test-text" id="testText">Their creativity knows no bounds!</p>
     
-        <div class="scroll-indicator">
-            <div class="mouse"><div class="wheel"></div></div>
-            <div class="arrow">
-                <span></span><span></span><span></span>
+                    <div class="test-person">
+                        <p id="testName">Mark Allister</p>
+                        <small id="testRole">CII – Stripe</small>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- BOTTOM CENTER – Creative scroll orb -->
+            <div class="scroll-orb">
+                <div class="orb"></div>
+                <span>Scroll</span>
             </div>
         </div>
     </section>
 
-        <!-- Let's Talk Button -->
+    <script>
+        const mobileBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+    
+        mobileBtn.addEventListener("click", () => {
+          mobileBtn.classList.toggle("active");
+          mobileMenu.classList.toggle("active");
+        });
+    
+    
+    
+    
+    
+        const testimonials = [
+        {
+            img: "Assets/ossy.png",
+            tag: "Perfecto!",
+            text: "Their creativity knows no bounds!",
+            name: "Mark Allister",
+            role: "CII – Stripe"
+        },
+        {
+            img: "Assets/ossy.png",
+            tag: "Amazing!",
+            text: "Pure Uxels transformed our entire brand identity.",
+            name: "Sarah Kim",
+            role: "Brand Lead – Canva"
+        },
+        {
+            img: "Assets/ossy.png",
+            tag: "Top tier!",
+            text: "They deliver pixel-perfect work every time.",
+            name: "James Odhiambo",
+            role: "CTO – KweliTech"
+        },
+        {
+            img: "Assets/ossy.png",
+            tag: "Elite craft!",
+            text: "No team matches their attention to detail.",
+            name: "Linda Mwangi",
+            role: "Marketing – Safaricom"
+        }
+    ];
+    
+    let i = 0;
+    setInterval(() => {
+        i = (i + 1) % testimonials.length;
+        document.getElementById("testImg").src = testimonials[i].img;
+        document.getElementById("testTag").textContent = testimonials[i].tag;
+        document.getElementById("testText").textContent = testimonials[i].text;
+        document.getElementById("testName").textContent = testimonials[i].name;
+        document.getElementById("testRole").textContent = testimonials[i].role;
+    }, 3500);
+    
+    
+      </script>
 
 
 <!-- Overlay Menu -->
@@ -209,8 +660,8 @@
     
     <section class="willowwood-section">
         <div class="section-header">
-            <h2 class="reveal-text">Featured <span class="highlight">Work</span></h2>
-            <p class="reveal-text">A showcase of our finest work and creative achievements</p>
+            <h2 class="reveal-right">Featured <span class="highlight">Work</span></h2>
+            <p class="reveal-right">A showcase of our finest work and creative achievements</p>
         </div>
 
         <div class="content-wrapper">
@@ -479,18 +930,18 @@
 <section class="testimonials-section">
     <div class="container">
         <div class="testimonials-header">
-            <div class="header-left reveal-text">
+            <div class="header-left reveal-right">
                 <span class="subtitle">Loved & trusted by</span>
                 <span class="count1">+20 businesses.</span>
             </div>
-            <div class="header-center reveal-text">
+            <div class="header-center reveal-right">
                 <h2>Trusted by hundreds of entrepreneurs</h2>
             </div>
             <div class="header-right">
             </div>
             
         </div>
-        <div class="reveal">
+        <div class="reveal-right">
             <a href="./contact.html" class="btn primary center">Get Started today</a>
         </div>
         
@@ -541,15 +992,15 @@
     <div class="container">
         <div class="section-header">
             <!-- Enhanced section header with animated elements -->
-            <div class="section-tag reveal-text" data-aos="fade-up">INSIGHTS & STORIES</div>
-            <h2 class="reveal-text" data-aos="fade-up" data-aos-delay="100">Latest <span class="highlight">Insights</span></h2>
-            <p class="reveal-text" data-aos="fade-up" data-aos-delay="200">Stay updated with our latest thoughts, industry insights, and creative journey</p>
+            <div class="section-tag reveal-right" data-aos="fade-up">INSIGHTS & STORIES</div>
+            <h2 class="reveal-right" data-aos="fade-up" data-aos-delay="100">Latest <span class="highlight">Insights</span></h2>
+            <p class="reveal-left" data-aos="fade-up" data-aos-delay="200">Stay updated with our latest thoughts, industry insights, and creative journey</p>
             <div class="section-line" data-aos="fade-up" data-aos-delay="300"></div>
         </div>
         
         <!-- Enhanced blog preview grid with staggered animations -->
         <div class="blog-preview-grid">
-            <article class="blog-preview-card reveal" data-aos="fade-up" data-aos-delay="100">
+            <article class="blog-preview-card reveal-right" data-aos="fade-up" data-aos-delay="100">
                 <div class="blog-preview-image">
                     <img src="./Assets/blog/insights.jpeg" alt="Design Trends 2025">
                     <div class="image-overlay">
@@ -573,7 +1024,7 @@
                 </div>
             </article>
             
-            <article class="blog-preview-card reveal" data-aos="fade-up" data-aos-delay="200">
+            <article class="blog-preview-card reveal-left" data-aos="fade-up" data-aos-delay="200">
                 <div class="blog-preview-image">
                     <img src="./Assets/blog/uiux.jpeg" alt="UX Best Practices">
                     <div class="image-overlay">
@@ -596,7 +1047,7 @@
                 </div>
             </article>
             
-            <article class="blog-preview-card reveal" data-aos="fade-up" data-aos-delay="300">
+            <article class="blog-preview-card reveal-right" data-aos="fade-up" data-aos-delay="300">
                 <div class="blog-preview-image">
                     <img src="./Assets/blog/colors.jpeg" alt="palette">
                     <div class="image-overlay">
@@ -620,7 +1071,7 @@
                 </div>
             </article>
 
-            <article class="blog-preview-card reveal" data-aos="fade-up" data-aos-delay="300">
+            <article class="blog-preview-card reveal-left" data-aos="fade-up" data-aos-delay="300">
                 <div class="blog-preview-image">
                     <img src="./Assets/blog/editing.jpeg" alt="videoediting">
                     <div class="image-overlay">
@@ -678,8 +1129,8 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="reveal-text">Ready to start your project?</h2>
-                <a href="./contact.html" class="btn primary reveal">Reach Out</a>
+                <h2 class="reveal-left">Ready to start your project?</h2>
+                <a href="./contact.html" class="btn primary reveal-right">Reach Out</a>
             </div>
         </div>
     </section>
