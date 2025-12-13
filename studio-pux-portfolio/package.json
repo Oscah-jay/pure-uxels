@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "main": "package.json",
   "license": "UNLICENSED",
+  "type": "module",
+  "module": "nodenext",
+  "moduleResolution": "nodenext",
+  
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
@@ -34,4 +38,6 @@
     "bracketSpacing": false,
     "singleQuote": true
   }
+
 }
+

@@ -1,4 +1,4 @@
-import project from "./project"
-import tag from "./tag"
+import project from "./project.js"
+import tag from "./tag.js"
 
 export const schemaTypes = [project, tag]

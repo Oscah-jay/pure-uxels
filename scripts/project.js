@@ -1,5 +1,5 @@
 // Sanity Client Configuration
-const SANITY_PROJECT_ID = "your-project-id" // Replace with your Sanity project ID
+const SANITY_PROJECT_ID = "pda6g6vd" // Replace with your Sanity project ID
 const SANITY_DATASET = "production"
 const SANITY_API_VERSION = "2023-05-03"
 
