@@ -275,7 +275,7 @@
     width: 85px;
     height: 85px;
     border-radius: 6px;
-    object-fit: cover;
+    object-fit: contain;
     margin-bottom: 10px;
     filter: grayscale(100%);
 }
@@ -296,16 +296,19 @@
     font-size: 14px;
     line-height: 1.4;
     max-width: 90%;
+    color: #1e3a8a;
 }
 
 .test-person p {
     font-weight: 600;
     margin: 0;
+    color: #1e3a8a;
 }
 
 .test-person small {
     opacity: .8;
     text-align: center;
+    color: black;
 }
 
 /* CTA BOX */
@@ -515,32 +518,32 @@
     
         const testimonials = [
         {
-            img: "Assets/ossy.png",
+            img: "Assets/testimonials/bsp.png",
             tag: "Perfecto!",
             text: "Their creativity knows no bounds!",
-            name: "Mark Allister",
-            role: "CII – Stripe"
+            name: "Moses",
+            role: "Bishop - NFM"
         },
         {
-            img: "Assets/ossy.png",
+            img: "Assets/testimonials/leah.png",
             tag: "Amazing!",
-            text: "Pure Uxels transformed our entire brand identity.",
-            name: "Sarah Kim",
-            role: "Brand Lead – Canva"
+            text: "Pure Uxels transformed our entire restaurant brand identity.",
+            name: "Leah N",
+            role: "Owner - Lescah Fast Food"
         },
         {
-            img: "Assets/ossy.png",
+            img: "Assets/testimonials/mercan logo 1.png",
             tag: "Top tier!",
             text: "They deliver pixel-perfect work every time.",
-            name: "James Odhiambo",
-            role: "CTO – KweliTech"
+            name: "Philip N",
+            role: "CTO – Mercan Autospares & Garage"
         },
         {
-            img: "Assets/ossy.png",
+            img: "Assets/testimonials/ed.png",
             tag: "Elite craft!",
             text: "No team matches their attention to detail.",
-            name: "Linda Mwangi",
-            role: "Marketing – Safaricom"
+            name: "Edwin W",
+            role: "Founder – Pawtastic Pet Feeds"
         }
     ];
     
@@ -598,10 +601,16 @@
   
       <!-- LEFT: image slider with multiple img elements (square) -->
       <div class="image-slider" aria-label="project images">
-        <img src="Assets/All Out Arena,Ruiru (1).png" alt="slide 1" class="slide active">
-        <img src="Assets/previews/Blu Nova Tech.png" alt="slide 2" class="slide">
-        <img src="Assets/All Out Arena,Ruiru (1).png" alt="slide 3" class="slide">
-        <img src="Assets/previews/Blu Nova Tech.png" alt="slide 4" class="slide">
+        <img src="Assets/portfolio/autoprogress.png" alt="slide 1" class="slide active">
+        <img src="Assets/previews/AB.png" alt="slide 2" class="slide">
+        <img src="Assets/previews/lff logo@2x.png" alt="slide 3" class="slide">
+        <img src="Assets/previews/pawtastic.png" alt="slide 4" class="slide">
+        <img src="Assets/previews/shalom nails.png" alt="slide 5" class="slide">
+        <img src="Assets/previews/Skip the Trip We’ll Handle It.png" alt="slide 6" class="slide">
+        <img src="Assets/previews/youth flyer nfm.png" alt="slide 7" class="slide">
+        <img src="Assets/previews/g collection (3).png" alt="slide 8" class="slide">
+        <img src="Assets/previews/nfm.png" alt="slide 9" class="slide">
+        <img src="Assets/previews/Send. Confirm. Done..png" alt="slide 10" class="slide">
       </div>
   
       <!-- RIGHT: marquee, text, nav -->
@@ -645,25 +654,56 @@
     */
     const projectData = [
       {
-        title: "WillowWood",
+        title: "Autoprogress Football Match",
         desc: "Branding / 3D Design / Motion Graphics / Web Design",
         link: "https://example.com/case-study-1"
       },
       {
-        title: "NeuroFlex System",
-        desc: "Medical UX / Robotics UI / Vision System Software",
+        title: "Asset Builders",
+        desc: "Branding / Print Collateral / Graphic Design",
         link: "https://example.com/case-study-2"
       },
       {
-        title: "OrthoMotion Lab",
-        desc: "Clinical Product Branding / Website / CAD Renders",
+        title: "Lescah Fast Food",
+        desc: "Logo Design / Brand Collateral / Social Media Graphics",
         link: "https://example.com/case-study-3"
       },
       {
-        title: "HumanFit Prosthetics",
-        desc: "Product Design / Medical Graphics / Digital Suite",
+        title: "Pawtastic Pet Foods",
+        desc: "Product Design / Packaging / Branding",
         link: "https://example.com/case-study-4"
       }
+        ,
+        {
+            title: "Shalom Nails & Spa",
+            desc: "Branding / Print Collateral / Social Media Graphics",
+            link: "https://example.com/case-study-5"
+        },
+        {
+            title: "Quest Foods",
+            desc: "Branding / Print Collateral / Graphic Design",
+            link: "https://example.com/case-study-6"
+        },
+        {
+            title: "NFM Youth Flyer",
+            desc: "Flyer Design / Print Collateral / Graphic Design",
+            link: "https://example.com/case-study-7"
+        },
+        {
+            title: "G Collection",
+            desc: "Branding / Print Collateral / Social Media Graphics",
+            link: "https://example.com/case-study-8"
+        },
+        {
+            title: "Newlife Fountain Ministries",
+            desc: "website Design / Branding / Graphic Design",
+            link: "https://example.com/case-study-9"
+        },
+        {
+            title: "XMobit",
+            desc: "Branding / Print Collateral / Graphic Design",
+            link: "https://example.com/case-study-10"
+        }
     ];
     
     /* ---------- DOM refs and state ---------- */
@@ -932,14 +972,14 @@
 <section class="case-studies">
     <div class="container">
         <h2 class="section-title">
-            <span class="highlight">PUX</span> Branding Case Studies
+            <span class="highlight">PUX</span> Case Studies
         </h2>
 
         <div class="projects-grid">
             <!-- Project 01 -->
             <a href="./case-studies/agent4-case-study.html" class="project-card">
                 <div class="project-image">
-                    <img src="Assets/All Out Arena,Ruiru (1).png" alt="Agent4">
+                    <img src="Assets/Agent 4/1.png" alt="Agent4">
                     <div class="project-overlay">
                         <span class="view-project">View project <span class="arrow">›</span></span>
                     </div>
@@ -954,7 +994,7 @@
             <!-- Project 02 -->
             <a href="case-studies/asset-branding-case-study.html" class="project-card">
                 <div class="project-image">
-                    <img src="Assets/All Out Arena,Ruiru (1).png" alt="Asset-builders">
+                    <img src="Assets/portfolio/AB.png" alt="Asset-builders">
                     <div class="project-overlay">
                         <span class="view-project">View project <span class="arrow">›</span></span>
                     </div>
@@ -969,7 +1009,7 @@
             <!-- Project 03 -->
             <a href="case-studies/mercan-case-study.html" class="project-card">
                 <div class="project-image">
-                    <img src="Assets/All Out Arena,Ruiru (1).png" alt="mercan">
+                    <img src="Assets/Mercan/Component 15.png" alt="mercan">
                     <div class="project-overlay">
                         <span class="view-project">View project <span class="arrow">›</span></span>
                     </div>
