@@ -378,28 +378,37 @@
 
     /* Testimonial Centering */
     .testimonial-box {
-        width: 90%;
-        max-width: 280px;
-        min-height: 160px;  /* you can adjust this */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
-    }
+  width: 90%;
+  max-width: 280px;
+  height: 300px;           /* FIXED height */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  margin-bottom: -90px;
+
+  overflow: hidden;       /* prevents content from resizing the box */
+}
+
 
     .test-text {
         max-width: 90%;
     }
     .test-img {
         margin: 0 auto 10px;
+        margin-bottom: -20px;
+        z-index: 1000;
     }
 
     .test-person p,
     .test-person small {
         text-align: center;
+        margin-top: -20px;
     }
 
     /* CTA Buttons Centered */
@@ -410,7 +419,7 @@
         align-items: center;
         gap: 15px;
         flex-direction: row;
-        margin-bottom: -20px;
+        margin-bottom: -18px;
         
     }
 
@@ -815,11 +824,11 @@
     sliderEl.addEventListener('mouseenter', stopAuto);
     sliderEl.addEventListener('mouseleave', startAuto);
     
-    /* ---------- New Project button placeholder ---------- */
-    newProjectBtn.addEventListener('click', () => {
-      // replace with a link, modal open, etc.
-      alert('New Project? clicked.');
-    });
+    /* ---------- New Project button ---------- */
+newProjectBtn.addEventListener('click', () => {
+  window.location.href = 'contact.html';
+});
+
     
     /* ---------- Initialize ---------- */
     (function init() {
