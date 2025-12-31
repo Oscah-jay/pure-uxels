@@ -159,7 +159,7 @@
   }
   
   .read-more-btn {
-    display: flex;
+    display: block;
     max-width: fit-content;
     align-items: center;
     gap: 8px;
