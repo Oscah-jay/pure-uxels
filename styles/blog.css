@@ -160,7 +160,7 @@
   
   .read-more-btn {
     display: block;
-    max-width: fit-content;
+    max-width: 50px;
     align-items: center;
     gap: 8px;
     color: var(--primary-color);
