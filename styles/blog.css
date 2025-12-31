@@ -160,10 +160,11 @@
   
   .read-more-btn {
     display: flex;
+    max-width: fit-content;
     align-items: center;
     gap: 8px;
     color: var(--primary-color);
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
   }
