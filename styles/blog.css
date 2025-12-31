@@ -159,11 +159,11 @@
   }
   
   .read-more-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
     transition: var(--transition);
   }
