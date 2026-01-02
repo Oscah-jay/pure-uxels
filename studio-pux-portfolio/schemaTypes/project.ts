@@ -35,7 +35,6 @@ export default {
           { title: "Web Design", value: "web-design" },
           { title: "Product Design", value: "product-design" },
           { title: "Motion Design", value: "motion-design" },
-          { title: "Photography", value: "photography" },
         ],
       },
       validation: (Rule: any) => Rule.required(),
