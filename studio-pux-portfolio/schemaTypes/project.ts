@@ -117,6 +117,59 @@ export default {
       ],
     },
     {
+      name: "testimonial",
+      title: "Client Testimonial",
+      type: "object",
+      fields: [
+        {
+          name: "quote",
+          title: "Testimonial Quote",
+          type: "text",
+          rows: 3,
+          description: "The testimonial quote from the client",
+        },
+        {
+          name: "clientName",
+          title: "Client Name",
+          type: "string",
+        },
+        {
+          name: "clientTitle",
+          title: "Client Title/Position",
+          type: "string",
+          description: 'E.g., "Chief Commercial Officer"',
+        },
+        {
+          name: "clientCompany",
+          title: "Client Company",
+          type: "string",
+        },
+        {
+          name: "clientAvatar",
+          title: "Client Avatar",
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: "rating",
+          title: "Client Satisfaction Rating",
+          type: "number",
+          options: {
+            list: [
+              { title: "5/5 Stars", value: 5 },
+              { title: "4/5 Stars", value: 4 },
+              { title: "3/5 Stars", value: 3 },
+              { title: "2/5 Stars", value: 2 },
+              { title: "1/5 Star", value: 1 },
+            ],
+          },
+          description: "Client satisfaction rating (1-5 stars)",
+        },
+      ],
+    },
+    {
       name: "gallery",
       title: "Image Gallery",
       type: "array",
