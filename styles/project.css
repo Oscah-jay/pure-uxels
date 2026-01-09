@@ -288,151 +288,108 @@
     }
   }
   
-  /* Testimonial Section */
-.testimonial-section {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Quote Column */
-.testimonial-quote {
-  flex: 1;
-  min-width: 0;
-}
-
-.testimonial-quote p {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  line-height: 1.6;
-  font-weight: 500;
-  margin: 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Client Info Column */
-.testimonial-client {
-  flex: 0 0 auto;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1.5rem;
-}
-
-/* Client Avatar */
-.testimonial-avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-/* Client Details */
-.testimonial-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.testimonial-name {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.testimonial-title {
-  font-size: 0.95rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-.testimonial-company {
-  font-size: 0.95rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-/* Star Rating */
-.testimonial-rating {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.testimonial-stars {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.star {
-  width: 1.2rem;
-  height: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.star.filled::before {
-  content: "❤️";
-  font-size: 1rem;
-}
-
-.testimonial-rating-text {
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
   .testimonial-section {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    align-items: flex-start;
+    padding: 5rem 2rem 3rem;
+    max-width: 1240px;
+    margin: 0 auto;
   }
 
+  .testimonial-quote {
+    flex: 1 1 70%;
+  }
+  
   .testimonial-quote p {
-    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    line-height: 1.45;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: #000;
   }
 
   .testimonial-client {
-    text-align: center;
-    align-items: center;
-  }
-
-  .testimonial-rating {
-    justify-content: center;
-  }
-
-  .testimonial-avatar {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  .testimonial-section {
-    gap: 1.5rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .testimonial-quote p {
-    font-size: 1.1rem;
+    flex: 0 0 260px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.25rem;
   }
 
   .testimonial-avatar {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
   }
-
-  .testimonial-name,
+  .testimonial-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  
+  .testimonial-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+  }
+  
   .testimonial-title,
   .testimonial-company {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #555;
+  }
+  .testimonial-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+  }
+  
+  .testimonial-stars {
+    display: flex;
+    gap: 0.3rem;
+  }
+  
+  .star.filled::before {
+    content: "❤️";
     font-size: 0.9rem;
   }
-}
+  
+  .testimonial-rating-text {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  @media (max-width: 768px) {
+    .testimonial-section {
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 3rem 1.5rem;
+    }
+  
+    .testimonial-quote p {
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+  
+    .testimonial-client {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .testimonial-rating {
+      align-items: center;
+    }
+  }
+  .star.filled::before {
+    color: #ff4d2d;
+  }
+          
+    
+  

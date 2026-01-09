@@ -37,6 +37,14 @@ function getProjectQuery(slug) {
         tags[]-> {
             title
         },
+        testimonial { 
+          quote, 
+          clientName, 
+          clientTitle, 
+          clientCompany, 
+          clientAvatar { asset-> { url } }, 
+          rating 
+      },
         "nextProject": *[_type == "project" && order > ^.order] | order(order asc)[0] {
             title,
             slug
@@ -70,6 +78,7 @@ async function fetchProject(slug) {
   } finally {
     loading.classList.remove("active")
   }
+  
 }
 
 // Demo project data
@@ -130,137 +139,134 @@ function getDemoProject(slug) {
 
 // Render project detail
 function renderProject(project) {
-  const container = document.getElementById("projectDetail")
+  const container = document.getElementById("projectDetail");
 
+  // Gallery HTML
   const galleryHTML =
     project.gallery
-      ?.map((img) => `<img src="${img.asset.url}" alt="${project.title}" class="gallery-item">`)
-      .join("") || ""
+      ?.map(
+        (img) =>
+          `<img src="${img.asset.url}" alt="${project.title}" class="gallery-item">`
+      )
+      .join("") || "";
 
+  // Results HTML
   const resultsHTML =
     project.results
       ?.map(
-        (result) =>
-          `<div class="result-item">
+        (result) => `
+        <div class="result-item">
             <div class="result-number">${result.number}</div>
             <div class="result-label">${result.label}</div>
-        </div>`,
+        </div>
+      `
       )
-      .join("") || ""
+      .join("") || "";
 
-  const servicesHTML = project.services?.map((service) => `<li>${service}</li>`).join("") || ""
+  // Services HTML
+  const servicesHTML =
+    project.services?.map((service) => `<li>${service}</li>`).join("") || "";
 
+  // Testimonial HTML (handles single testimonial object)
+  let testimonialHTML = "";
+  if (project.testimonial) {
+    const t = project.testimonial;
+    testimonialHTML = `
+      <div class="project-testimonial">
+          ${
+            t.clientAvatar?.asset?.url
+              ? `<img src="${t.clientAvatar.asset.url}" alt="${t.clientName}" class="testimonial-avatar">`
+              : ""
+          }
+          <p class="testimonial-quote">"${t.quote}"</p>
+          <p class="testimonial-name">${t.clientName}</p>
+          <p class="testimonial-role">${
+            t.clientTitle ? t.clientTitle + " at " : ""
+          }${t.clientCompany || ""}</p>
+          ${t.rating ? `<p class="testimonial-rating">Rating: ${t.rating}/5 ⭐</p>` : ""}
+      </div>
+    `;
+  }
+
+  // Build the project HTML
   container.innerHTML = `
-        <div class="project-hero">
-            <img src="${project.mainImage.asset.url}" alt="${project.title}" class="project-hero-image">
-            
-            <div class="project-header">
-                <div class="project-category">${project.category}</div>
-                <h1 class="project-title">${project.title}</h1>
-                ${project.tagline ? `<p class="project-tagline">${project.tagline}</p>` : ""}
-                
-                <div class="project-meta">
-                    ${
-                      project.client
-                        ? `
-                    <div class="meta-item">
-                        <h4>Client</h4>
-                        <p>${project.client}</p>
-                    </div>`
-                        : ""
-                    }
-                    ${
-                      project.year
-                        ? `
-                    <div class="meta-item">
-                        <h4>Year</h4>
-                        <p>${project.year}</p>
-                    </div>`
-                        : ""
-                    }
-                    ${
-                      project.services
-                        ? `
-                    <div class="meta-item">
-                        <h4>Services</h4>
-                        <ul>${servicesHTML}</ul>
-                    </div>`
-                        : ""
-                    }
-                </div>
+    <div class="project-hero">
+        <img src="${project.mainImage.asset.url}" alt="${project.title}" class="project-hero-image">
+        <div class="project-header">
+            <div class="project-category">${project.category}</div>
+            <h1 class="project-title">${project.title}</h1>
+            ${project.tagline ? `<p class="project-tagline">${project.tagline}</p>` : ""}
+            <div class="project-meta">
+                ${
+                  project.client
+                    ? `<div class="meta-item"><h4>Client</h4><p>${project.client}</p></div>`
+                    : ""
+                }
+                ${
+                  project.year
+                    ? `<div class="meta-item"><h4>Year</h4><p>${project.year}</p></div>`
+                    : ""
+                }
+                ${
+                  project.services
+                    ? `<div class="meta-item"><h4>Services</h4><ul>${servicesHTML}</ul></div>`
+                    : ""
+                }
             </div>
         </div>
-        
-        <div class="project-content">
-            ${
-              project.description
-                ? `
-            <div class="project-section">
-                <h2>Overview</h2>
-                <p>${project.description}</p>
-            </div>`
-                : ""
-            }
-            
-            ${
-              project.challenge
-                ? `
-            <div class="project-section">
-                <h2>The Challenge</h2>
-                <p>${project.challenge}</p>
-            </div>`
-                : ""
-            }
-            
-            ${
-              project.solution
-                ? `
-            <div class="project-section">
-                <h2>Our Solution</h2>
-                <p>${project.solution}</p>
-            </div>`
-                : ""
-            }
-        </div>
-        
+    </div>
+
+    <div class="project-content">
         ${
-          galleryHTML
-            ? `
-        <div class="project-gallery">
-            <div class="gallery-grid">
-                ${galleryHTML}
-            </div>
-        </div>`
+          project.description
+            ? `<div class="project-section"><h2>Overview</h2><p>${project.description}</p></div>`
             : ""
         }
-        
         ${
-          resultsHTML
-            ? `
-        <div class="project-section">
-            <h2>Results</h2>
-            <div class="results-grid">
-                ${resultsHTML}
-            </div>
-        </div>`
+          project.challenge
+            ? `<div class="project-section"><h2>The Challenge</h2><p>${project.challenge}</p></div>`
             : ""
         }
-        
         ${
-          project.nextProject
-            ? `
-        <div class="next-project">
+          project.solution
+            ? `<div class="project-section"><h2>Our Solution</h2><p>${project.solution}</p></div>`
+            : ""
+        }
+    </div>
+
+    ${
+      galleryHTML
+        ? `<div class="project-gallery"><div class="gallery-grid">${galleryHTML}</div></div>`
+        : ""
+    }
+
+    ${
+      testimonialHTML
+        ? `<div class="project-testimonials"><h2>Client Testimonial</h2>${testimonialHTML}</div>`
+        : ""
+    }
+
+    ${
+      resultsHTML
+        ? `<div class="project-section"><h2>Results</h2><div class="results-grid">${resultsHTML}</div></div>`
+        : ""
+    }
+
+    ${
+      project.nextProject
+        ? `<div class="next-project">
             <h3>Next Project</h3>
             <h2>${project.nextProject.title}</h2>
             <a href="project.html?slug=${project.nextProject.slug.current}" class="next-project-link">View Project →</a>
-        </div>`
-            : ""
-        }
-    `
+          </div>`
+        : ""
+    }
+  `;
 
   // Update page title
-  document.title = `${project.title} - Creative Agency`
+  document.title = `${project.title} - Creative Agency`;
 }
+
 
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
